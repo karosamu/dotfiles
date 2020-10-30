@@ -1,0 +1,25 @@
+#!/bin/sh
+
+
+focused=$(xrdb ~/.Xresources -query all | grep foreground | cut -f2 | head -n 1)
+normal=$(xrdb ~/.Xresources -query all | grep color1 | cut -f2 | head -n 1)
+
+bspc config border_radius           15
+bspc config focused_border_color	"$focused"
+bspc config normal_border_color		"$normal"
+bspc config border_width		    4
+bspc config window_gap 			    8
+bspc config focus_follows_pointer	true
+bspc config top_padding             40
+bspc config split_ratio			    0.52
+bspc config borderless_monocle		true
+bspc config gapless_monocle		    false
+bspc config single_monocle		    true
+
+#killall -q sxhkd
+
+$HOME/.config/bspwm/launch.sh
+$HOME/.config/polybar/launch.sh &
+#sxhkd &
+wal -R
+bspwm
