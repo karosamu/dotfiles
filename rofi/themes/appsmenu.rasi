@@ -3,11 +3,12 @@
  */
 @import "shared/settings.rasi"
 * {
-  background-color: @background;
+  background-color: #00000000;
   text-color: @foreground-list;
   font: @text-font;
 }
 #window {
+  background-color: @background;
   padding: @list-8-window-padding;
 }
 inputbar,
@@ -22,8 +23,8 @@ entry {
 }
 #prompt {
   padding: @prompt-padding;
-  background-color: @accent;
-  text-color: @background;
+  background-color: @background;
+  text-color: @foreground;
 }
 #textbox-prompt-colon {
   expand: false;

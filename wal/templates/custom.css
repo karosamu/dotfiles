@@ -23,7 +23,7 @@
 }}
 
 .theme-dark {{
-    --foreground-1: var(--foreground);
+    --foreground-1: var(--color1);
     --foreground-2: var(--foreground);
     --foreground-divider: var(--color10);
     --background-1: var(--background);
@@ -72,7 +72,7 @@
     --text-3: var(--color6);
     --text-4: var(--color3);
     --text-dark: var(--color2);
-    --accent: {color1.rgb};
+    --accent: {foreground.rgb};
   }}
   .theme-light {{
     --foreground-1: #fff;

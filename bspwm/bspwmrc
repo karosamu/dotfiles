@@ -18,7 +18,7 @@ bspc config single_monocle		    true
 
 #killall -q sxhkd
 
-$HOME/.config/bspwm/launch.sh
+#$HOME/.config/bspwm/launch.sh
 $HOME/.config/polybar/launch.sh &
 #sxhkd &
 wal -R

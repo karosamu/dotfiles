@@ -16,7 +16,7 @@
 
 :root {{
 	--accent-color: var(--color1);
-	--secondary-accent-color: var(--color4);
+	--secondary-accent-color: var(--color3);
 	--light-color: var(--foreground);
 	--dark-color: var(--background);
 }}

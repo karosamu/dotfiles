@@ -125,7 +125,7 @@ super + e
 
 # launch app menu
 super + d
-	$HOME/.config/rofi/scripts/appsmenu.sh 
+	sh $HOME/.config/rofi/scripts/appsmenu.sh 
 	#rofi -theme $HOME/.cache/wal/colors-rofi-dark.rasi -modi drun -show drun
 
 # lock the screen
@@ -146,7 +146,8 @@ super + slash
 
 # select a random pywal theme
 super + r
-    set foo (find "$HOME/Pictures/Wallpapers" -xtype f | sort -R | head -1); pywal $foo
+        sh $HOME/.config/rofi/scripts/walmenu.sh
+        #set foo (find "$HOME/Pictures/Wallpapers" -xtype f | sort -R | head -1); pywal $foo
 
 # change keyboard layout
 super + space
@@ -170,3 +171,7 @@ XF86Audio{Mute,LowerVolume,RaiseVolume}
 # requires `amixer`
 XF86Audio{Mute,LowerVolume,RaiseVolume}
     amixer set Master {toggle,5%-,5%+}
+
+# network menu
+control + alt + n
+    sh $HOME/.cache/networkmenu.sh

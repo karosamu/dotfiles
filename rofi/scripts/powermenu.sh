@@ -14,7 +14,7 @@ options="$lock\n$power_off\n$reboot\n$suspend\n$log_out"
 chosen="$(echo -e "$options" | $rofi_command -dmenu -selected-row 0)"
 case $chosen in
     $lock)
-        betterlockscreen -l blur -t "karsam"
+        betterlockscreen -l dimblur -t "karsam"
         ;;    
     $power_off)
         systemctl poweroff
@@ -23,7 +23,7 @@ case $chosen in
         systemctl reboot
         ;;
     $suspend)
-        betterlockscreen -l blur -s -t "karsam"
+        betterlockscreen -l dimblur -s -t "karsam"
         ;;
     $log_out)
         bspc quit
