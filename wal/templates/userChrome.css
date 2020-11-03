@@ -20,7 +20,7 @@ ENJOY!
 
 /*================ GLOBAL COLORS ================*/
 :root {{
-	--accent-color: var(--color1);
+	--accent-color: var(--color2);
 	--secondary-accent-color: var(--color3);
 	--light-color: var(--foreground);
 	--dark-color: var(--background);
@@ -191,7 +191,7 @@ toolbar#nav-bar toolbarbutton #fxa-avatar-image {{
 #urlbar:not([focused="true"]) > #urlbar-background,
 #urlbar > #urlbar-input-container {{
 	border-radius: 40px !important;
-	color: rgba(var(--accent-color), 1) !important;
+	color: rgba(var(--foreground), 1) !important;
 }}
 #PersonalToolbar .toolbarbutton-1:not([disabled="true"]):not([checked]):not([open]):not(:active):hover, .tabbrowser-arrowscrollbox:not([scrolledtostart="true"])::part(scrollbutton-up):hover, .tabbrowser-arrowscrollbox:not([scrolledtoend="true"])::part(scrollbutton-down):hover, .findbar-button:not(:-moz-any([checked="true"], [disabled="true"])):hover, toolbarbutton.bookmark-item:not(.subviewbutton):hover:not([disabled="true"]):not([open]), toolbar .toolbarbutton-1:not([disabled="true"]):not([checked]):not([open]):not(:active):hover > .toolbarbutton-icon, toolbar .toolbarbutton-1:not([disabled="true"]):not([checked]):not([open]):not(:active):hover > .toolbarbutton-text, toolbar .toolbarbutton-1:not([disabled="true"]):not([checked]):not([open]):not(:active):hover > .toolbarbutton-badge-stack {{
 	background-color: rgba(var(--transparent-bgcolor), 0.2) !important;
@@ -206,10 +206,10 @@ toolbar#nav-bar toolbarbutton #fxa-avatar-image {{
 }}
 
 #urlbar {{
-	color: rgba(var(--light-color), 1) !important;
+	color: rgba(var(--foreground), 1) !important;
 }}
 .urlbarView-url {{
-    color: rgba(var(--accent-color), 1) !important;
+    color: rgba(var(--foreground), 1) !important;
 }}
 
 

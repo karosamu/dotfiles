@@ -23,7 +23,7 @@ case $chosen in
         systemctl reboot
         ;;
     $suspend)
-        betterlockscreen -l dimblur -s -t "karsam"
+        betterlockscreen -l dimblur -t "karsam" & sleep 0.5 && systemctl suspend
         ;;
     $log_out)
         bspc quit

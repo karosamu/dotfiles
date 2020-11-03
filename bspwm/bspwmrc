@@ -18,6 +18,7 @@ bspc config single_monocle		    true
 
 #killall -q sxhkd
 
+wmname LG3D &
 #$HOME/.config/bspwm/launch.sh
 $HOME/.config/polybar/launch.sh &
 #sxhkd &

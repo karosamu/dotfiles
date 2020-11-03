@@ -34,6 +34,9 @@ super + g
 super + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
+super + shift + f
+	{bspc config top_padding 4 && polybar-msg cmd hide, bspc config top_padding 40 && polybar-msg cmd show}
+
 # set the node flags
 super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
@@ -126,7 +129,6 @@ super + e
 # launch app menu
 super + d
 	sh $HOME/.config/rofi/scripts/appsmenu.sh 
-	#rofi -theme $HOME/.cache/wal/colors-rofi-dark.rasi -modi drun -show drun
 
 # lock the screen
 super + l
@@ -134,11 +136,15 @@ super + l
 
 # printscreen selected area
 shift + Print
-	maim -us -c 255,255,255,0.1 -l ~/Pictures/Screenshots/(date +%s).png | xclip -selection clipboard -t image/png && notify-send "maim" "Screenshot copied to clipboard"
+	maim -us -c 255,255,255,0.1 -l /tmp/screenshot.png; cat /tmp/screenshot.png | xclip -selection clipboard -t image/png; cp /tmp/screenshot.png $HOME/Pictures/Screenshots/(date +%s).png | notify-send "maim" "Screenshot copied to clipboard"
 
 # printscreen entire screen
 control + Print
-	maim -u ~/Pictures/Screenshots/(date +%s).png | xclip -selection clipboard -t image/png && notify-send "maim" "Screenshot copied to clipboard"
+	maim -u /tmp/screenshot.png; cat /tmp/screenshot.png | xclip -selection clipboard -t image/png; cp /tmp/screenshot.png $HOME/Pictures/Screenshots/(date +%s).png | notify-send "maim" "Screenshot copied to clipboard"
+
+# pick a color
+shift + alt + Print
+	sh $HOME/.config/rofi/scripts/colormenu.sh
 
 # launch keybind menu
 super + slash
@@ -147,31 +153,27 @@ super + slash
 # select a random pywal theme
 super + r
         sh $HOME/.config/rofi/scripts/walmenu.sh
-        #set foo (find "$HOME/Pictures/Wallpapers" -xtype f | sort -R | head -1); pywal $foo
 
 # change keyboard layout
 super + space
-    {setxkbmap lt, setxkbmap us, setxkbmap gb}
+    	{setxkbmap lt, setxkbmap us, setxkbmap gb}
 
+# change gaps
 shift + alt + {minus,equal}
-    bspc config -d focused window_gap $((`bspc config -d focused window_gap` {+,-} 2 ))
+    	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {+,-} 2 ))
 
 # dual_monitor
 super + shift + bracket{left,right}
-    {sh $HOME/.config/sxhkd/single.sh, sh $HOME/.config/sxhkd/dual.sh}
+    	{sh $HOME/.config/sxhkd/single.sh, sh $HOME/.config/sxhkd/dual.sh}
 
 # requires `xbacklight`
 XF86MonBrightness{Down,Up}
-    xbacklight {-dec 15,-inc 15}
+    	xbacklight {-dec 10,-inc 10}
 
 # requires `amixer`
 XF86Audio{Mute,LowerVolume,RaiseVolume}
-    amixer set Master {toggle,5%-,5%+}
-
-# requires `amixer`
-XF86Audio{Mute,LowerVolume,RaiseVolume}
-    amixer set Master {toggle,5%-,5%+}
+    	amixer set Master {toggle,5%-,5%+}
 
 # network menu
 control + alt + n
-    sh $HOME/.cache/networkmenu.sh
+    	sh $HOME/.cache/networkmenu.sh
