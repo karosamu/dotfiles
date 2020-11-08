@@ -34,8 +34,9 @@ super + g
 super + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
+# semi-fullscreen
 super + shift + f
-	{bspc config top_padding 4 && polybar-msg cmd hide, bspc config top_padding 40 && polybar-msg cmd show}
+	{bspc config top_padding 4 && polybar-msg cmd hide, bspc config top_padding 50 && polybar-msg cmd show}
 
 # set the node flags
 super + ctrl + {m,x,y,z}
@@ -130,7 +131,7 @@ super + e
 super + d
 	sh $HOME/.config/rofi/scripts/appsmenu.sh 
 
-# lock the screen
+# power menu
 super + l
 	sh $HOME/.config/rofi/scripts/powermenu.sh
 
@@ -156,7 +157,7 @@ super + r
 
 # change keyboard layout
 super + space
-    	{setxkbmap lt, setxkbmap us, setxkbmap gb}
+    	{setxkbmap lt | notify-send "setxkbmap" "layout changed to LT", setxkbmap us | notify-send "setxkbmap" "layout changed to US", setxkbmap gb | notify-send "setxkbmap" "layout changed to GB"}
 
 # change gaps
 shift + alt + {minus,equal}
@@ -177,3 +178,7 @@ XF86Audio{Mute,LowerVolume,RaiseVolume}
 # network menu
 control + alt + n
     	sh $HOME/.cache/networkmenu.sh
+
+# RPI menu
+control + alt + r
+	sh $HOME/.cache/rpi.sh

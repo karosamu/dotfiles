@@ -20,8 +20,8 @@ ENJOY!
 
 /*================ GLOBAL COLORS ================*/
 :root {{
-	--accent-color: var(--color2);
-	--secondary-accent-color: var(--color3);
+	--accent-color: var(--color6);
+	--secondary-accent-color: var(--color6);
 	--light-color: var(--foreground);
 	--dark-color: var(--background);
 }}

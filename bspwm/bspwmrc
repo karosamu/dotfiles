@@ -2,7 +2,7 @@
 
 
 focused=$(xrdb ~/.Xresources -query all | grep foreground | cut -f2 | head -n 1)
-normal=$(xrdb ~/.Xresources -query all | grep color1 | cut -f2 | head -n 1)
+normal=$(xrdb ~/.Xresources -query all | grep background | cut -f2 | head -n 1)
 
 bspc config border_radius           15
 bspc config focused_border_color	"$focused"
@@ -10,13 +10,23 @@ bspc config normal_border_color		"$normal"
 bspc config border_width		    4
 bspc config window_gap 			    8
 bspc config focus_follows_pointer	true
-bspc config top_padding             40
+bspc config top_padding             50
 bspc config split_ratio			    0.52
 bspc config borderless_monocle		true
 bspc config gapless_monocle		    false
 bspc config single_monocle		    true
 
 #killall -q sxhkd
+
+#bspc subscribe node_state | while read -r _ _ _ node state status; do
+#    if [[ "$state" == "floating" ]]; then
+#        case "$status" in
+#            off) xprop -id "$node" -remove _COMPTON_SHADOW;;
+#            on) xprop -id "$node" -f _COMPTON_SHADOW 32c -set _COMPTON_SHADOW 1;;
+#        esac
+#    fi
+#done
+
 
 wmname LG3D &
 #$HOME/.config/bspwm/launch.sh
