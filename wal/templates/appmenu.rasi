@@ -1,6 +1,6 @@
 * {{
   accent:           {color6};
-  background:       {background}aa;
+  background:       {background}ee;
   background-light: {color6};
   background-focus: {background};
   foreground:       {foreground};

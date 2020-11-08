@@ -16,15 +16,17 @@ prompt,
 textbox-prompt-colon,
 entry {
   background-color: @background-light;
+  border-radius: 20px;
 }
 #inputbar {
   children: [ prompt, textbox-prompt-colon, entry ];
   margin: @inputbar-margin;
+  border-radius: 20px;
 }
 #prompt {
   padding: @prompt-padding;
-  background-color: @background;
-  text-color: @foreground;
+  background-color: @accent;
+  text-color: @background;
 }
 #textbox-prompt-colon {
   expand: false;
@@ -41,6 +43,7 @@ entry {
   border: @list-element-border;
   background-color: @background-light;
   border-color: @background-light;
+  border-radius: 20px;
 }
 #element.selected {
   background-color: @background-focus;

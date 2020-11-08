@@ -13,7 +13,7 @@
     timeout = 3
 
 [urgency_critical]
-    background = "{foreground}"
+    background = "{color1}"
     foreground = "{background}"
     timeout = 15
 
