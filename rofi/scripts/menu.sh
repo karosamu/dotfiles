@@ -7,9 +7,11 @@ theme=" Theme"
 network="直 Network"
 rpi=" Raspberry"
 mount=" Mount"
-firewall="Firewall"
+firewall=" Firewall"
+bt=" Bluetooth"
+hama=" Hamachi"
 # Variable passed to rofi
-options="$theme\n$mount\n$network\n$rpi\n$firewall"
+options="$theme\n$mount\n$network\n$rpi\n$hama\n$firewall\n$bt"
 
 chosen="$(echo -e "$options" | $rofi_command -dmenu -selected-row 0)"
 case $chosen in
@@ -26,7 +28,13 @@ case $chosen in
         sudo -A bash $HOME/.config/rofi/scripts/mntmenu.sh
         ;;
     $firewall)
-        bash $HOME/.config/rofi/scripts/fwmenu.sh
+        sudo -A bash $HOME/.config/rofi/scripts/fwmenu.sh
+        ;;
+    $bt)
+        bash $HOME/.config/rofi/scripts/btmenu.sh
+        ;;
+    $hama)
+        sudo -A bash $HOME/.config/rofi/scripts/hamamenu.sh
         ;;
 esac
 

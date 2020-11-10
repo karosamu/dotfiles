@@ -160,30 +160,26 @@ super + r
 super + space
     	{setxkbmap lt | notify-send "setxkbmap" "layout changed to LT", setxkbmap us | notify-send "setxkbmap" "layout changed to US", setxkbmap gb | notify-send "setxkbmap" "layout changed to GB"}
 
-# change gaps
-shift + alt + {minus,equal}
-    	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {+,-} 2 ))
-
-# dual_monitor
+# monitor setup
 super + shift + bracket{left,right}
     	{sh $HOME/.config/sxhkd/single.sh, sh $HOME/.config/sxhkd/dual.sh}
 
-# requires `xbacklight`
+# adjust brightness
 XF86MonBrightness{Down,Up}
     	xbacklight {-dec 10,-inc 10}
 
-# requires `amixer`
+# adjust volume
 XF86Audio{Mute,LowerVolume,RaiseVolume}
     	amixer set Master {toggle,5%-,5%+}
-
-# network menu
-#control + alt + n
-#    	sh $HOME/.cache/networkmenu.sh
-
-# RPI menu
-#control + alt + r
-#	sh $HOME/.cache/rpi.sh
-
-# Mount menu
-#shift + super + m
-#    sudo -A sh $HOME/.config/rofi/scripts/mntmenu.sh
+# play spotify
+XF86AudioPlay
+    dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+# stop spotify
+XF86AudioStop
+    dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop
+# next spotify
+XF86AudioNext
+    dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+# previous spotify
+XF86AudioPrev
+    dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
