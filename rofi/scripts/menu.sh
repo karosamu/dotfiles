@@ -7,8 +7,9 @@ theme=" Theme"
 network="直 Network"
 rpi=" Raspberry"
 mount=" Mount"
+firewall="Firewall"
 # Variable passed to rofi
-options="$theme\n$mount\n$network\n$rpi"
+options="$theme\n$mount\n$network\n$rpi\n$firewall"
 
 chosen="$(echo -e "$options" | $rofi_command -dmenu -selected-row 0)"
 case $chosen in
@@ -23,5 +24,9 @@ case $chosen in
         ;;
     $mount)
         sudo -A bash $HOME/.config/rofi/scripts/mntmenu.sh
+        ;;
+    $firewall)
+        bash $HOME/.config/rofi/scripts/fwmenu.sh
+        ;;
 esac
 

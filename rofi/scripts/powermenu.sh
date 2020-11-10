@@ -23,7 +23,7 @@ case $chosen in
         systemctl reboot
         ;;
     $suspend)
-	systemctl suspend
+	    systemctl suspend
         ;;
     $log_out)
         bspc quit
