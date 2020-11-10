@@ -46,7 +46,7 @@ entry {
   border-radius: 20px;
 }
 #element.selected {
-  background-color: @background-focus;
+  background-color: #00000000;/*@background-focus;*/
   text-color: @foreground;
   border-color: @accent;
 }

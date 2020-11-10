@@ -1,6 +1,6 @@
 cat /home/karsam/.cache/wal/sequences
 sh $HOME/.profile
-
+set -gx SUDO_ASKPASS ~/.config/scripts/passwd.sh
 # set fish_color_normal normal
 set fish_color_normal {foreground.strip}
 # set fish_color_command 005fd7

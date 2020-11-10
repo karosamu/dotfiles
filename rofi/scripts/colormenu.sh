@@ -3,8 +3,8 @@
 rofi_command="rofi -theme themes/appsmenu.rasi"
 
 #### Options ###
-rgb="RGB"
-hex="HEX"
+rgb=" RGB"
+hex=" HEX"
 # Variable passed to rofi
 options="$hex\n$rgb"
 

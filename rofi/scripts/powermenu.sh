@@ -3,11 +3,11 @@
 rofi_command="rofi -theme themes/appsmenu.rasi"
 
 #### Options ###
-power_off="Power off"
-reboot="Reboot"
-lock="Lock"
-suspend="Suspend"
-log_out="Log out"
+power_off=" Power off"
+reboot="勒 Reboot"
+lock=" Lock"
+suspend="鈴 Suspend"
+log_out="﫼 Log out"
 # Variable passed to rofi
 options="$lock\n$power_off\n$reboot\n$suspend\n$log_out"
 

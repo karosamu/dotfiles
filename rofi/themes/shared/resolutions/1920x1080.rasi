@@ -1,10 +1,10 @@
 * {
   /* General */
-  confirm-text-font:                    "Hurmit Nerd Font Mono 18";
-  text-font:                            "Comfortaa Bold 14";
-  text-font-mono:                       "RobotoMono Nerd Font Regular 14";
-  icon-font:                            "Hurmit Nerd Font Mono 60";
-  icon-font-small:                      "Hurmit Nerd Font Mono 24";
+  confirm-text-font:                    "SFMono Nerd Font Mono 18";
+  text-font:                            "SFMono Nerd Font Mono Bold 16";
+  text-font-mono:                       "SFMono Nerd Font 12";
+  icon-font:                            "SFMono Nerd Font Mono 60";
+  icon-font-small:                      "SFMono Nerd Font Mono 24";
   inputbar-margin:                      4px 4px;
   prompt-padding:                       16px 20px;
   entry-padding:                        18px 16px 16px 0px;
