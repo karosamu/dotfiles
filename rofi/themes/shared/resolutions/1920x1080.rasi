@@ -5,25 +5,14 @@
   text-font-mono:                       "SFMono Nerd Font 12";
   icon-font:                            "SFMono Nerd Font Mono 60";
   icon-font-small:                      "SFMono Nerd Font Mono 24";
-  inputbar-margin:                      4px 4px;
-  prompt-padding:                       16px 20px;
-  entry-padding:                        18px 16px 16px 0px;
-  /* confirmmenu */
-  confirm-window-height:                300px;
-  confirm-window-width:                 627px;
-  confirm-window-border:                2px;
-  confirm-prompt-padding:               20px 30px;
-  confirm-prompt-margin:                8px;
-  confirm-listview-padding:             60px 114px 0px 114px;
-  /* Values bellow are 'no-padding' ones for a size 18 (@confirm-text-font) font, played around using this character: ■
-   * We then add add 30 actual padding around the text.
-   *                                    -4px  -1px  -6px  -28px */
-  confirm-element-padding:              26px  29px  24px  2px;
+  inputbar-margin:                      5px 5px;
+  prompt-padding:                       6px 30px;
+  entry-padding:                        7px 7px 7px 0px;
   /* list menus: appsmenu, networkmenu and nmvpnmenu */
-  list-element-padding:                 20px;
-  list-element-margin:                  @inputbar-margin;
-  list-element-border:                  0px 0px 0px 8px;
-  list-8-window-padding:                219px 360px;
+  list-element-padding:                 10px 30px;
+  list-element-margin:                  1px 0px;
+  list-element-border:                  0px 0px 0px 0px;
+  list-8-window-padding:                0px 20px;
   /* option menus: i3layoutmenu, mpdmenu, powermenu and scrotmenu */
   /**
    * Values bellow are 'no-padding' ones for a size 60 (@icon-font) font, played around using this character: ■
@@ -36,7 +25,7 @@
   option-5-listview-spacing:            77px;
   option-6-listview-spacing:            50px;
   /* appsmenu */
-  apps-textbox-prompt-colon-padding:    16px;
+  apps-textbox-prompt-colon-padding:    6px;
   /* mpdmenu */
   mpd-window-padding:                   379px 111px;
   mpd-inputbar-margin:                  10px 0px;

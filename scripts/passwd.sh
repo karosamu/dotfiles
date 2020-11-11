@@ -3,5 +3,5 @@ rofi -dmenu\
     -password\
     -i\
     -fixed-num-lines\
-    -p "Password:"\
+    -p "Password"\
     -theme /home/karsam/.config/rofi/themes/appsmenu.rasi

@@ -166,11 +166,12 @@ super + shift + bracket{left,right}
 
 # adjust brightness
 XF86MonBrightness{Down,Up}
-    	xbacklight {-dec 10,-inc 10}
+    	sh $HOME/.config/scripts/bright.sh {down,up}
 
 # adjust volume
 XF86Audio{Mute,LowerVolume,RaiseVolume}
-    	amixer set Master {toggle,5%-,5%+}
+    	sh /home/karsam/.config/scripts/vol.sh {mute,down,up}
+    	#amixer set Master {toggle,5%-,5%+}
 # play spotify
 XF86AudioPlay
     dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause

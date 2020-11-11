@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rofi_command="rofi -theme /home/karsam/.config/rofi/themes/appsmenu.rasi"
+rofi_command="rofi -theme /home/karsam/.config/rofi/themes/appsmenu.rasi -config /home/karsam/.config/rofi/config.rasi"
 
 #### Options ###
 status=" Status:$(hamachi | grep status | cut -f 2 -d ':')"
