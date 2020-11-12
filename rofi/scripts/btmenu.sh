@@ -12,9 +12,11 @@ chosen="$(echo -e "$options" | $rofi_command -dmenu -selected-row 0)"
 case $chosen in
     $on)
         bluetooth on
+        dunstify --replace 200 "bluetooth" "bluetooth switched on"
         ;;    
     $off)
         bluetooth off
+        dunstify --replace 200 "bluetooth" "bluetooth switched off"
         ;;
 esac
 

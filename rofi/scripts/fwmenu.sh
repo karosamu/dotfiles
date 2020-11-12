@@ -12,10 +12,10 @@ options="$status\n$on\n$off"
 chosen="$(echo -e "$options" | $rofi_command -dmenu -selected-row 0)"
 case $chosen in
     $on)
-        sudo -A ufw enable && notify-send "ufw" "turned firewall on"
+        sudo -A ufw enable && dunstify --replace 201 "ufw" "turned firewall on"
         ;;    
     $off)
-        sudo -A ufw disable && notify-send "ufw" "turned firewall off"
+        sudo -A ufw disable && dunstify --replace 201 "ufw" "turned firewall off"
         ;;
 esac
 

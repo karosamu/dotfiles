@@ -10,8 +10,9 @@ mount=" Mount"
 firewall=" Firewall"
 bt=" Bluetooth"
 hama=" Hamachi"
+rofi=" Rofi"
 # Variable passed to rofi
-options="$theme\n$mount\n$network\n$rpi\n$hama\n$firewall\n$bt"
+options="$theme\n$mount\n$network\n$rpi\n$hama\n$firewall\n$bt\n$rofi"
 
 chosen="$(echo -e "$options" | $rofi_command -dmenu -selected-row 0)"
 case $chosen in
@@ -36,5 +37,7 @@ case $chosen in
     $hama)
         sudo -A bash $HOME/.config/rofi/scripts/hamamenu.sh
         ;;
+    $rofi)
+        bash $HOME/.config/rofi/scripts/rofimenu.sh
 esac
 

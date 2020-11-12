@@ -13,9 +13,11 @@ chosen="$(echo -e "$options" | $rofi_command -dmenu -selected-row 0)"
 case $chosen in
     $on)
         systemctl start logmein-hamachi
+        dunstify --replace 202 "hamachi" "hamachi was turned on"
         ;;    
     $off)
         systemctl stop logmein-hamachi
+        dunstify --replace 202 "hamachi" "hamachi was turned off"
         ;;
 esac
 

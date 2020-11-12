@@ -1,0 +1,12 @@
+configuration {
+  show-icons:         false;
+  icon-theme:         "Paper";
+  yoffset: -181;
+  xoffset: -735;
+  cycle:              true;
+  hide-scrollbar:     true;
+  disable-history:    false;
+  modi:               "drun";
+  display-drun:       "apps";
+  columns: 1;
+}

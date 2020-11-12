@@ -1,6 +1,6 @@
 [frame]
     width = 0
-    color = "{color1}"
+    color = "{color6}"
 
 [urgency_low]
     background = "{background}"
@@ -13,7 +13,7 @@
     timeout = 3
 
 [urgency_critical]
-    background = "{color1}"
+    background = "{color6}"
     foreground = "{background}"
     timeout = 15
 

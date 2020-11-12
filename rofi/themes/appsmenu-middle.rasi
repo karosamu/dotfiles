@@ -1,0 +1,53 @@
+/**
+ * This theme is intended for a 8x2 items list menu with a headerbar.
+ */
+@import "shared/settings.rasi"
+* {
+  background-color: #00000000;
+  text-color: @foreground-list;
+  font: @text-font;
+}
+#window {
+  background-color: @background;
+  padding: @list-8-window-padding;
+}
+inputbar,
+prompt,
+textbox-prompt-colon,
+entry {
+  background-color: @background-light;
+  border-radius: 20px;
+}
+#inputbar {
+  children: [ prompt, textbox-prompt-colon, entry ];
+  margin: @inputbar-margin;
+  border-radius: 20px;
+}
+#prompt {
+  padding: @prompt-padding;
+  background-color: @accent;
+  text-color: @background;
+}
+#textbox-prompt-colon {
+  expand: false;
+  str: "  : :  ";
+  padding: @apps-textbox-prompt-colon-padding;
+}
+#entry {
+  text-color: @background;
+  padding: @entry-padding;
+}
+#element {
+  padding: @list-element-padding;
+  margin: @list-element-margin;
+  /*border: @list-element-border;*/
+  background-color: @background-light;
+  border-color: @background-light;
+  border-radius: 20px;
+}
+#element.selected {
+  background-color: @background-focus;
+  text-color: @foreground;
+  border-color: @accent;
+}
+

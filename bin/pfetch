@@ -1092,6 +1092,7 @@ get_ascii() {
 
         [Ee]ndeavour*)
             read_ascii 4 <<-EOF
+						${c1}
 						      ${c1}/${c4}\\
 				    ${c1}/${c4}/  \\${c6}\\
 				   ${c1}/${c4}/    \\ ${c6}\\
@@ -1590,7 +1591,7 @@ main() {
         # Disable globbing and set the positional parameters to the
         # contents of 'PF_INFO'.
         set -f
-        set +f -- ${PF_INFO-ascii title os host kernel uptime shell pkgs}
+        set +f -- ${PF_INFO-ascii title os host kernel uptime shell pkgs memory}
 
         # Iterate over the info functions to determine the lengths of the
         # "info names" for output alignment. The option names and subtitles

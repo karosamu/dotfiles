@@ -2,7 +2,7 @@
 Author: dpcdpc11.gumroad.com
 ENJOY!
 */
-
+#contentAreaContextMenu{{ margin: 5px 0 0 5px }}
 /*================ GLOBAL COLORS ================*/
 :root {{
 	--accent-color: {color6.rgb};

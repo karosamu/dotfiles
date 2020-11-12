@@ -2,11 +2,11 @@
 
 insidecolor={background.strip}00
 ringcolor={foreground.strip}ff
-keyhlcolor={color1.strip}ff
-bshlcolor={color1.strip}ff
+keyhlcolor={color6.strip}ff
+bshlcolor={color6.strip}ff
 separatorcolor={background.strip}00
 insidevercolor={background.strip}00
-insidewrongcolor={color1.strip}ff
+insidewrongcolor={color6.strip}ff
 ringvercolor={foreground.strip}ff
 ringwrongcolor={foreground.strip}ff
 verifcolor={foreground.strip}ff
