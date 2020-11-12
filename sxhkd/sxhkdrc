@@ -122,7 +122,9 @@ super + w
 super + e
 	alacritty -e ranger
     
-    
+# sysinfo
+super + shift + i
+    bash $HOME/.config/scripts/sysinfo.sh
 # ROFI SCRIPTS
 
 # launch ROFI
