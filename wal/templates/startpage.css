@@ -8,6 +8,10 @@
 	--acc4: {color8};
 }}
 
+.entry {{
+  color: var(--acc1);
+}}
+
 @font-face {{
   font-family: "Roboto";
 }}
