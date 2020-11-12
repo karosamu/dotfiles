@@ -40,7 +40,7 @@
     plain_text = no             # Treat message as plain text
     sort = yes                  # Sort messages by urgency
     indicate_hidden = yes       # Show how many messages are currently hidden (see geometry)
-    alignment = center          # Align text left/center/right
+    alignment = left            # Align text left/center/right
     bounce_freq = 0             # Frequency to bounce text back and forth if it is longer than the window width (conflicts with "word_wrap")
     show_age_threshold = 60     # Show if message is older than x seconds (-1 to disable)
     word_wrap = yes             # Split notifications into multiple lines if they don't fit into geometry

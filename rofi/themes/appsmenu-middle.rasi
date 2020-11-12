@@ -15,39 +15,43 @@ inputbar,
 prompt,
 textbox-prompt-colon,
 entry {
-  background-color: @background-light;
+  background-color: @background-focus;
   border-radius: 20px;
+  text-color: @background-light;
 }
 #inputbar {
   children: [ prompt, textbox-prompt-colon, entry ];
   margin: @inputbar-margin;
   border-radius: 20px;
+  text-color: @background-light;
 }
 #prompt {
   padding: @prompt-padding;
   background-color: @accent;
-  text-color: @background;
+  text-color: @background-focus;
 }
 #textbox-prompt-colon {
   expand: false;
   str: "  : :  ";
+  text-color: @background-light;
   padding: @apps-textbox-prompt-colon-padding;
 }
 #entry {
-  text-color: @background;
+  text-color: @background-light;
   padding: @entry-padding;
 }
 #element {
   padding: @list-element-padding;
   margin: @list-element-margin;
   /*border: @list-element-border;*/
-  background-color: @background-light;
+  background-color: @background-focus;
   border-color: @background-light;
   border-radius: 20px;
+  text-color: @foreground;
 }
 #element.selected {
-  background-color: @background-focus;
-  text-color: @foreground;
+  background-color: @background-light;
+  text-color: @background-focus;
   border-color: @accent;
 }
 

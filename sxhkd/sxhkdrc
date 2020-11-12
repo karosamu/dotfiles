@@ -166,8 +166,8 @@ super + space
     	{setxkbmap lt | dunstify --replace 550  "setxkbmap" "layout changed to LT", setxkbmap us | dunstify --replace 550 "setxkbmap" "layout changed to US", setxkbmap gb | dunstify --replace 550 "setxkbmap" "layout changed to GB"}
 
 # monitor setup
-super + shift + bracket{left,right}
-    	{sh $HOME/.config/sxhkd/single.sh, sh $HOME/.config/sxhkd/dual.sh}
+#super + shift + bracket{left,right}
+#    	{sh $HOME/.config/sxhkd/single.sh, sh $HOME/.config/sxhkd/dual.sh}
 
 # adjust brightness
 XF86MonBrightness{Down,Up}
