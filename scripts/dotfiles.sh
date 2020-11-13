@@ -13,3 +13,5 @@ cp $dir/alacritty.yml $dir/dotfiles
 rsync -r --copy-links --exclude '.git' $dir/startpage/termstart/ $dir/dotfiles/startpage/termstart/
 cp -r $HOME/Pictures/Wallpapers $dir/dotfiles
 cp /usr/bin/pfetch $dir/dotfiles/bin/
+
+cp $dir/scripts/sysinfo.sh $HOME/Documents/notifetch/notifetch
