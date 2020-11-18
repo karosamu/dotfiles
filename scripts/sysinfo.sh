@@ -1,98 +1,219 @@
 #!/usr/bin/env bash
 
+notification=true
+debug=false
 
-# Get user and hostname
-user="$USER@$(hostname)"
+while getopts 'ndbh' flag; do
+    case "${flag}" in
+        n) notification='true'; debug='false' ;;
+        d) notification='false'; debug='true' ;;
+        b) notification='true'; debug='true' ;;
+        h) echo -ne "Notifetch\n" 
+           echo "Use -n to only display the notification (default)";
+           echo "Use -d to only display values in the terminal";
+           echo "Use -b to display both";
+           exit 1;;
+        *) echo -ne "Notifetch\n"
+           echo "Use -n to only display the notification (default)";
+           echo "Use -d to only display values in the terminal";
+           echo "Use -b to display both";
+           exit 1 ;;
+    esac
+done
 
-# Get current volume percentage
-# amixer outputs Front left and Front right values with %'s and some other info
-# I grep the % lines and leave only one of them
-# Then I cut to the seperator before % value which is '[', and then cut everything after th %
-vol="$(amixer -D pulse get Master | grep '%' | head -n 1 | cut -d '[' -f 2 | cut -d '%' -f 1)"
+# Possible values:
+# user time date uptime os kernel wm mem bat backlight vol wifi pkg sh weather music disk
+config=("user" "time" "date" "uptime" "os" "kernel" "wm" "mem" "pkg" "sh" "disk")
+# notification urgency level
+level="critical"
 
-# Get current battery percentage
-# acpi outputs a single line if there's only 1 battery, but just to make sure I grep the main battery
-# 2nd field of acpi is the %, so I cut out the rest
-bat="$(acpi | grep "Battery 0" | cut -d , -f2 | cut -d" " -f2)"
+weather_city="London"
+# disk path array ("/dev/***" "/dev/***" "dev/***")
+disk_path=("/dev/nvme0n1p1")
 
-# Get memory
-# free -m outputs headers, memory and swap in 3 lines
-# with tail we cut off the headers, and use head to get memory line
-# then we get the column values:
-# 1st: total system memory
-# 2nd: used (used here)
-# 3rd: free memory (free=total-used-shared-cached)
-# 4th: shared (used here)
-# 5th: cached
-# Get used memory
-mem="$(free -m | tail -n 2 | head -n 1 | awk '{ print $3 }')"
-# Get shared memory
-mem2="$(free -m | tail -n 2 | head -n 1 | awk '{ print $5 }')"
-# Calculate total memory
-totmem="$((mem + mem2))"
-# Append 'M' to all 3
-totmem="$(echo $totmem | sed 's/$/M/')"
-mem="$(echo $mem | sed 's/$/M/')"
-mem2="$(echo $mem2 | sed 's/$/M/')"
+# icons/prefixes for values
+user_prefix=""
+vol_prefix=""
+bat_prefix=""
+mem_prefix=""
+date_prefix=""
+time_prefix=""
+wifi_prefix="直"
+music_prefix=""
+weather_prefix="摒"
+backlight_prefix=""
+os_prefix=""
+kernel_prefix=""
+uptime_prefix=""
+wm_prefix=""
+pkg_prefix=""
+sh_prefix=""
+disk_prefix=""
 
-# Get current date and time
-# %a is current weekday
-# %F is full date in YYYY-MM-DD format
-# %H is hours in 12hr format
-# %M is minutes
-# %p is am/pm
-date="$(date +"%a %F")"
-time="$(date +"%H:%M %p")"
+# define which os is used for packages
+ospkg=$(uname -srm | cut -f 1 -d '')
 
-# Get connected wifi ssid
-# nmcli outputs all interfaces in this format:
-# interface_name: connected to %SSID% (if connected)
-#    *** info about the interface ***
-# I grep the 1st found line with "connected"
-wifi="$(nmcli | grep ": connected" | head -n 1 | awk '{print $4 }')"
+for val in ${config[*]}
+do
+    case $val in
+        user)
+            user="$USER@$(cat /proc/sys/kernel/hostname)"
+            argconf+=$user_prefix' '$user'\n'
+        ;;
+        vol)
+            if command -v amixer &> /dev/null
+            then
+                vol="$(amixer -D pulse get Master | grep '%' | head -n 1 | cut -d '[' -f 2 | cut -d '%' -f 1)"
+                argconf+=$vol_prefix' '$vol'%\n'
+            fi
+        ;;
+        disk)
+            for disk in ${disk_path[*]}
+            do
+                if [ $(df | grep $disk | wc -l) -gt 0 ]
+                then
+                    disk_size="$(df -h | grep $disk | awk '{print $2}')"
+                    disk_used="$(df -h | grep $disk | awk '{print $3}')"
+                    disk_avail="$(df -h | grep $disk | awk '{print $4}' | sed 's/$/ free/')"
+                    disk_perc_used="$(df -h | grep $disk | awk '{print $5}')"
+                    argconf+=$disk_prefix' '$disk_used' / '$disk_size' ('$disk_perc_used'), '$disk_avail'\n'
+                else
+                    argconf+=$disk_prefix' '$disk' not mounted/connected\n'
+                fi
+            done
+        ;;
+        bat)
+            if [ -d /sys/class/power_supply/*BAT*/ ]
+            then
+                if [ -f /sys/class/power_supply/*BAT*/capacity ]
+                then
+                    bat="$(cat /sys/class/power_supply/*BAT*/capacity)"
+                elif command -v acpi &> /dev/null
+                then
+                    bat="$(acpi | cut -f 2 -d ',' | sed 's/ //g' | sed 's/%//g')"
+                else
+                    bat="$(awk "BEGIN {print int($(cat /sys/class/power_supply/*BAT*/charge_now)/$(cat /sys/class/power_supply/*BAT*/charge_full)*100)}")"
+                fi
+                argconf+=$bat_prefix' '$bat'%\n'
+            fi
+        ;;
+        mem)
+            mem="$(free -m | tail -n 2 | head -n 1 | awk '{ print $3 }')"
+            mem2="$(free -m | tail -n 2 | head -n 1 | awk '{ print $5 }')"
+            totmem="$((mem + mem2))"
+            totmem="$(echo $totmem | sed 's/$/M/')"
+            mem="$(echo $mem | sed 's/$/M/')"
+            mem2="$(echo $mem2 | sed 's/$/M/')"
+            argconf+=$mem_prefix' '$mem/$mem2/$totmem'\n'
+        ;;
+        date)
+            date="$(date +"%a %F")"
+            argconf+=$date_prefix' '$date'\n'
+        ;;
+        time)
+            time="$(date +"%H:%M %p")"
+            argconf+=$time_prefix' '$time'\n'
+        ;;
+        wifi)
+            if command -v iw &> /dev/null
+            then
+                wifi="$(iw dev wlan0 link | grep 'SSID' | cut -f 2 -d ':' | sed 's/ //g')"
+                argconf+=$wifi_prefix' '$wifi'\n'
+            fi
+        ;;
+        music)
+            if command -v mpc &> /dev/null
+            then
+                music="$(mpc current)"
+                argconf+=$music_prefix' '$music'\n'
+            fi
+        ;;
+        weather)
+            if command -v curl &> /dev/null
+            then
+                    weather="$(curl -s http://wttr.in/$weather_city?format=3)"
+                argconf+=$weather_prefix' '$weather'\n'
+            fi
+        ;;
+        backlight)
+            if [ -d /sys/class/backlight ]
+            then
+                bckl="$(awk "BEGIN {print int(($(cat /sys/class/backlight/*/brightness)/$(cat /sys/class/backlight/*/max_brightness)*100)+0.5)}")"
+                argconf+=$backlight_prefix' '$bckl'%\n'
+            fi
+        ;;
+        os)
+            os="$(cat /etc/os-release | grep NAME | head -n 1 | cut -f 2 -d '=' | sed 's/"//g')"
+            argconf+=$os_prefix' '$os'\n'
+        ;;
+        kernel)
+            kernel="$(uname -r | cut -f 1 -d '-')"
+            argconf+=$kernel_prefix' '$kernel'\n'
+        ;;
+        uptime)
+            uptime="$(uptime | cut -f 1 -d ',' | sed -E 's/^[^,]*up *//; s/, *[[:digit:]]* users.*//; s/min/minutes/; s/([[:digit:]]+):0?([[:digit:]]+)/\1 hours, \2 minutes/')"
+            argconf+=$uptime_prefix' '$uptime'\n'
+        ;;
+        wm)
+            if command -v xprop &> /dev/null
+            then
+                id=$(xprop -root -notype _NET_SUPPORTING_WM_CHECK)
+                id=${id##* }
+                wm="$(xprop -id "$id" -notype -len 25 -f _NET_WM_NAME 8t | grep 'WM_NAME' | cut -f 2 -d '=' | sed 's/ //g;s/"//g')"
+                argconf+=$wm_prefix' '$wm'\n'
+            fi
+        ;;
+        pkg)
+            has() { command -v "$1" >/dev/null; }
+            pkg=`
+                case $ospkg in
+                    Linux*)
+                        has pacman-key && pacman -Qq
+                        has bonsai     && bonsai list
+                        has crux       && pkginfo -i
+                        has dpkg       && dpkg-query -f '.\n' -W
+                        has rpm        && rpm -qa
+                        has xbps-query && xbps-query -l
+                        has apk        && apk info
+                        has guix       && guix package --list-installed
+                        has opkg       && opkg list-installed
+                        has kiss       && printf '%s\n' /var/db/kiss/installed/*/
+                        has cpt-list   && printf '%s\n' /var/db/cpt/installed/*/
+                        has brew       && printf '%s\n' "$(brew --cellar)/"*
+                        has emerge     && printf '%s\n' /var/db/pkg/*/*/
+                        has pkgtool    && printf '%s\n' /var/log/packages/*
+                        has eopkg      && printf '%s\n' /var/lib/eopkg/package/*
+                        has nix-store  && {
+                            nix-store -q --requisites /run/current-system/sw
+                            nix-store -q --requisites ~/.nix-profile
+                        }
+                    ;;
+                    Minix)
+                        printf '%s\n' /usr/pkg/var/db/pkg/*/
+                    ;;
+                esac | wc -l
+            `
+            argconf+=$pkg_prefix' '$pkg'\n'
+        ;;
+        sh)
+            sh="$(basename $SHELL)"
+            argconf+=$sh_prefix' '$sh'\n'
+        ;;
+    esac
+done
 
-# Get monitor backlight percentage
-# xbacklight outputs the value with very high precision
-# to counter it I add 0.5 to the value and round it up by casting it to an int
-# It gets the value correctly most of the time
-# If there's a better solution, feel free to suggest
-bckl="$(xbacklight | awk '{print int($1+0.5)}')"
+if [ $notification = 'true' ]
+then
+    if command -v dunstify &> /dev/null
+    then
+        dunstify -u $level -r 200 "notifetch" "$argconf"
+    else
+        notify-send -u $level "notifetch" "$argconf"
+    fi
+fi
 
-# Get OS name
-# /etc/os-release has NAME and PRETTY_NAME, I grep the 1st NAME line
-# Then i cut everything before the '=' (format is 'NAME="osname"') and cut the '"'
-os="$(cat /etc/os-release | grep NAME | head -n 1 | cut -f 2 -d '=' | sed 's/"//g')"
+if [ $debug = 'true' ]
+then
+    echo -ne $argconf
+fi
 
-# Get kernel name
-# this is just personal taste, but I prefer to just have the kernel version, so I cut everything after '-'
-kernel="$(uname -r | cut -f 1 -d '-')"
-
-# Get uptime and convert it to a nice format
-# uptime output format:
-# $uptimesince up $uptime, $n user, ......
-# cut everything after 1st, change the format to x hours and x minutes
-uptime="$(uptime | cut -f 1 -d ',' | sed -E 's/^[^,]*up *//; s/, *[[:digit:]]* users.*//; s/min/minutes/; s/([[:digit:]]+):0?([[:digit:]]+)/\1 hours, \2 minutes/')"
-
-# Get wm name
-# this outputs something like this:
-# _NET_SUPPORTING_WM_CHECK: window id # 0x600000
-# I then get the window id from it
-id=$(xprop -root -notype _NET_SUPPORTING_WM_CHECK)
-id=${id##* }
-# Then I can get the wm name with cuts
-wm="$(xprop -id "$id" -notype -len 25 -f _NET_WM_NAME 8t | grep 'WM_NAME' | cut -f 2 -d '=' | sed 's/ //g;s/"//g')"
-
-# Get package count
-# Get all packages and do a line count
-pkg="$(pacman -Qq | wc -l)"
-
-# Get shell name
-# Gets current shell name in /bin/shell or /usr/bin/shell
-# reverses the output to something like llehs/nib/ or llehs/nib/rsu/
-# cut the 1st value to '/' so w get llehs
-# I then reverse it again to get the shell
-sh="$(echo $SHELL | rev | cut -f 1 -d '/' | rev)"
-
-# Send notification
-# I will try to improve this later so it would be configurable, but for now it outputs everything
-dunstify --replace 301 -u critical " ${user}"$'\n'" ${date}"$'\n'" ${time}"$'\n'" ${uptime}"$'\n'" ${os}"$'\n'" ${kernel}"$'\n'" ${wm}"$'\n'" ${pkg}"$'\n'" ${sh}"$'\n'" ${vol}%  ${bat}  ${bckl}%"$'\n'" ${mem}/${mem2}/${totmem}"$'\n'"直 ${wifi}"

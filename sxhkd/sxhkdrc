@@ -163,7 +163,7 @@ super + r
 
 # change keyboard layout
 super + space
-    	{setxkbmap lt | dunstify --replace 550  "setxkbmap" "layout changed to LT", setxkbmap us | dunstify --replace 550 "setxkbmap" "layout changed to US", setxkbmap gb | dunstify --replace 550 "setxkbmap" "layout changed to GB"}
+    	{setxkbmap lt | dunstify --replace 550  "setxkbmap" "layout changed to lt", setxkbmap us | dunstify --replace 550 "setxkbmap" "layout changed to us", setxkbmap gb | dunstify --replace 550 "setxkbmap" "layout changed to gb"}
 
 # monitor setup
 #super + shift + bracket{left,right}

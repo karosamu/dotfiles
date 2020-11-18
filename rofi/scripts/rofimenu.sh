@@ -8,7 +8,7 @@ dir4=$dir3/resolutions
 #### Options ###
 top=" Top"
 mid=" Middle"
-sleek="Sleek"
+sleek=" Sleek"
 options="$mid\n$top\n$sleek"
 
 chosen="$(echo -e "$options" | $rofi_command -dmenu -selected-row 0)"

@@ -4,16 +4,16 @@ rofi_command="rofi -theme /home/karsam/.config/rofi/themes/appsmenu.rasi -config
 
 #### Options ###
 # Variable passed to rofi
-options=$(sudo blkid | cut -f 1 -d ':')
+options=$(sudo -A blkid | cut -f 1 -d ':')
 chosen="$(echo -e "$options" | $rofi_command -dmenu -selected-row 0)"
 mounted=$(mount | grep $chosen > /dev/null && echo true || echo false)
 echo $mounted
 if [ $? -eq 0 ]; then
     if [ $mounted = "true" ]; then
-        sudo umount $chosen
+        sudo -A umount $chosen
         notify-send "mnt" "unmounted device $chosen"
     else
-        mnt $chosen
+        sudo -A mnt $chosen
         notify-send "mnt" "mounted device $chosen"
     fi
 else

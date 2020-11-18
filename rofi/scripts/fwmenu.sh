@@ -3,7 +3,7 @@
 rofi_command="rofi -theme /home/karsam/.config/rofi/themes/appsmenu.rasi -config /home/karsam/.config/rofi/config.rasi"
 
 #### Options ###
-status=" $(ufw status)"
+status=" $(sudo -A ufw status)"
 on=" Turn ufw on"
 off=" Turn ufw off"
 # Variable passed to rofi

@@ -26,16 +26,16 @@ case $chosen in
         bash $HOME/.cache/rpi.sh
         ;;
     $mount)
-        sudo -A bash $HOME/.config/rofi/scripts/mntmenu.sh
+        bash $HOME/.config/rofi/scripts/mntmenu.sh
         ;;
     $firewall)
-        sudo -A bash $HOME/.config/rofi/scripts/fwmenu.sh
+        bash $HOME/.config/rofi/scripts/fwmenu.sh
         ;;
     $bt)
         bash $HOME/.config/rofi/scripts/btmenu.sh
         ;;
     $hama)
-        sudo -A bash $HOME/.config/rofi/scripts/hamamenu.sh
+        bash $HOME/.config/rofi/scripts/hamamenu.sh
         ;;
     $rofi)
         bash $HOME/.config/rofi/scripts/rofimenu.sh
