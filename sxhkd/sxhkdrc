@@ -163,7 +163,7 @@ super + r
 
 # change keyboard layout
 super + space
-    	{setxkbmap lt | dunstify --replace 550  "setxkbmap" "layout changed to lt", setxkbmap us | dunstify --replace 550 "setxkbmap" "layout changed to us", setxkbmap gb | dunstify --replace 550 "setxkbmap" "layout changed to gb"}
+    	{setxkbmap lt -option caps:escape | dunstify --replace 550  "setxkbmap" "layout changed to lt", setxkbmap us -option caps:escape | dunstify --replace 550 "setxkbmap" "layout changed to us", setxkbmap gb -option caps:escape | dunstify --replace 550 "setxkbmap" "layout changed to gb"}
 
 # monitor setup
 #super + shift + bracket{left,right}
@@ -189,3 +189,7 @@ XF86AudioNext
 # previous spotify
 XF86AudioPrev
     dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+
+# lastpass
+super + shift + p
+        sh $HOME/.config/rofi/scripts/passmenu.sh

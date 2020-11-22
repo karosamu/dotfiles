@@ -166,8 +166,8 @@ font:
 colors:
   # Default colors
   #primary:
-  background: '#090706'
-  foreground: '#ced5d8'
+  background: '#0f0f10'
+  foreground: '#c1cbca'
 
     # Bright and dim foreground colors
     #
@@ -223,39 +223,39 @@ colors:
 
   # Normal colors
   normal:
-    black:   '#DA766D'
-    red:     '#E17B72'
-    green:   '#B0807D'
-    yellow:  '#77949C'
-    blue:    '#95A3A8'
-    magenta: '#D09F9A'
-    cyan:    '#ced5d8'
-    white:   '#909597'
+    black:   '#4F5A64'
+    red:     '#59666F'
+    green:   '#64717A'
+    yellow:  '#6C827D'
+    blue:    '#6C7B83'
+    magenta: '#77878E'
+    cyan:    '#c1cbca'
+    white:   '#878e8d'
 
   # Bright colors
   bright:
-    black:   '#DA766D'
-    red:     '#E17B72'
-    green:   '#B0807D'
-    yellow:  '#77949C'
-    blue:    '#95A3A8'
-    magenta: '#D09F9A'
-    cyan:    '#ced5d8'
-    white:   '#909597'
+    black:   '#4F5A64'
+    red:     '#59666F'
+    green:   '#64717A'
+    yellow:  '#6C827D'
+    blue:    '#6C7B83'
+    magenta: '#77878E'
+    cyan:    '#c1cbca'
+    white:   '#878e8d'
 
   # Dim colors
   #
   # If the dim colors are not set, they will be calculated automatically based
   # on the `normal` colors.
   dim:
-    black:   '#DA766D'
-    red:     '#E17B72'
-    green:   '#B0807D'
-    yellow:  '#77949C'
-    blue:    '#95A3A8'
-    magenta: '#D09F9A'
-    cyan:    '#ced5d8'
-    white:   '#909597'
+    black:   '#4F5A64'
+    red:     '#59666F'
+    green:   '#64717A'
+    yellow:  '#6C827D'
+    blue:    '#6C7B83'
+    magenta: '#77878E'
+    cyan:    '#c1cbca'
+    white:   '#878e8d'
 
   # Indexed Colors
   #

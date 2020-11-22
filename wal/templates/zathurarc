@@ -1,0 +1,77 @@
+" -----------------------------------------------------------------------------
+" Zathura settings
+" -----------------------------------------------------------------------------
+
+" Colors
+set default-bg              "{background}"
+set default-fg              "{foreground}"
+
+set statusbar-bg            "{background}"
+set statusbar-fg            "{foreground}"
+
+set inputbar-bg             "{background}"
+set inputbar-fg             "{foreground}"
+
+set notification-error-bg   "{color6}"
+set notification-error-fg   "{background}"
+
+set notification-warning-bg "{background}"
+set notification-warning-fg "{foreground}"
+
+set highlight-color         "{color6}"
+set highlight-active-color  "{color1}"
+
+set completion-highlight-fg "{background}"
+set completion-highlight-bg "{foreground}"
+
+set completion-bg           "{background}"
+set completion-fg           "{color6}"
+
+set notification-bg         "{background}"
+set notification-fg         "{foreground}"
+
+set recolor                 "true"
+set recolor-lightcolor      "{background}"
+set recolor-darkcolor       "{foreground}"
+set recolor-reverse-video   "true"
+set recolor-keephue         "false"
+
+" Clipboard
+set selection-clipboard clipboard
+
+" Search
+set incremental-search true
+set search-hadjust true
+
+" Autoadjust
+set adjust-open "best-fit"
+
+" Typography
+" set font "SF Pro Display"
+
+" -----------------------------------------------------------------------------
+" Zathura mappings
+" -----------------------------------------------------------------------------
+
+" Zoom in/out
+map z zoom in
+map Z zoom out
+
+" Toggle mode
+map D toggle_page_mode
+
+" Scroll
+map u scroll half-up
+map d scroll half-down
+
+" Fullscreen
+map [normal]     <F11> toggle_fullscreen
+map [fullscreen] <F11> toggle_fullscreen
+
+" Reload
+map [normal]     <C-r> reload
+map [fullscreen] <C-r> reload
+
+map <C-i> recolor
+
+" vim: ft=vim

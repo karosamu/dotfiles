@@ -23,7 +23,7 @@ done
 
 # Possible values:
 # user time date uptime os kernel wm mem bat backlight vol wifi pkg sh weather music disk
-config=("user" "time" "date" "uptime" "os" "kernel" "wm" "mem" "pkg" "sh" "disk")
+config=("uptime" "os" "kernel" "wm" "mem" "pkg" "sh")
 # notification urgency level
 level="critical"
 

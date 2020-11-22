@@ -1,6 +1,6 @@
 configuration {
   show-icons:         true;
-  icon-theme:         "Paper";
+  icon-theme:         "Inverse-black";
   cycle:              true;
   hide-scrollbar:     true;
   disable-history:    false;

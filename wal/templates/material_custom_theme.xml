@@ -9,7 +9,7 @@
     <option name="inactiveColor" value="000000" />
     <option name="selectionForegroundColor" value="{background.strip}" />
     <option name="selectionBackgroundColor" value="{foreground.strip}" />
-    <option name="textColor" value="{color1.strip}" />
+    <option name="textColor" value="{color6.strip}" />
     <option name="foregroundColor" value="{foreground.strip}" />
     <option name="backgroundColor" value="{background.strip}" />
     <option name="buttonColor" value="{background.strip}" />

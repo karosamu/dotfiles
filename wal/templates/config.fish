@@ -1,12 +1,14 @@
 cat /home/karsam/.cache/wal/sequences
 sh $HOME/.profile
+set -gx LPASS_DISABLE_PINENTRY 1
+set -gx LPASS_ASKPASS ~/.config/scripts/passwd.sh
 set -gx SUDO_ASKPASS ~/.config/scripts/passwd.sh
 # set fish_color_normal normal
 set fish_color_normal {foreground.strip}
 # set fish_color_command 005fd7
 set fish_color_command {color6.strip}
 # set fish_color_param 00afff
-set fish_color_param {color1.strip}
+set fish_color_param {color6.strip}
 # set fish_color_redirection 00afff
 set fish_color_redirection $fish_color_param
 # set fish_color_comment 990000

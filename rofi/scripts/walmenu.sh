@@ -1,5 +1,8 @@
 wallpaperdir="$HOME/Pictures/Wallpapers"
 options=$(ls -d "$wallpaperdir"/* | sed "s:\($wallpaperdir\)\(.*\)\/:\2:")
+backscript="$HOME/.config/rofi/scripts/menu.sh"
+echo $backscript
+back=" back"
 lock=" lock"
 save=" save"
 grub=" grub"
@@ -8,6 +11,9 @@ options="$random\n$lock\n$save\n$grub\n$options"
 selection=$(echo -e "$options" | rofi -dmenu -theme themes/appsmenu.rasi)
 if [ $? -eq 0 ]; then
     case $selection in
+        $back)
+            bash $backscript
+            ;;
         $random)
             notify-send "pywal" "applying new theme"
             wall=$(ls $HOME/Pictures/Wallpapers/*/*.{jpeg,jpg,png} | sort -R | sort -R | sort -R | head -n 1)
@@ -21,7 +27,7 @@ if [ $? -eq 0 ]; then
             ;;
         $save)
             nofity-send "wallpaper" "wallpaper saving"
-            cp $(cat $HOME/.cache/wal/wal) $wallpaperdir"/"$(date +%s%N | cut -b10-19)".jpg"
+            cp $(cat $HOME/.cache/wal/wal) $wallpaperdir"/Saved/"$(date +%s%N | cut -b10-19)".jpg"
             notify-send "wallpaper" "wallpaper saved"
             ;;
         $grub)
@@ -31,7 +37,6 @@ if [ $? -eq 0 ]; then
             notify-send "grub" "grub theme changed"
             ;;
         *)
-            echo $selection
             bash $HOME/.config/rofi/scripts/selectopt.sh $wallpaperdir/$selection/
             ;;
     esac

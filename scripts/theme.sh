@@ -7,7 +7,7 @@ rm $HOME/.config/fish/config.fish;
 ln -s -f $HOME/.cache/wal/config.fish $HOME/.config/fish/config.fish
 (cd $HOME/.themes/phocus && npm run build);
 cd $HOME;
-wal_steam;
+#wal_steam;
 killall dunst;
 bspc wm -r;
 notify-send "pywal" "Theme applied";

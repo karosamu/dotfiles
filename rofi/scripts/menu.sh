@@ -1,6 +1,8 @@
 #!/bin/bash
 
 rofi_command="rofi -theme themes/appsmenu.rasi"
+backscript="$(dirname $0)/$(basename $0) $1"
+echo $backscript
 
 #### Options ###
 theme=" Theme"
@@ -17,7 +19,7 @@ options="$theme\n$mount\n$network\n$rpi\n$hama\n$firewall\n$bt\n$rofi"
 chosen="$(echo -e "$options" | $rofi_command -dmenu -selected-row 0)"
 case $chosen in
     $theme)
-        bash $HOME/.config/rofi/scripts/walmenu.sh
+        bash $HOME/.config/rofi/scripts/walmenu.sh $backscript
         ;;    
     $network)
         bash $HOME/.cache/networkmenu.sh

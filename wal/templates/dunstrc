@@ -97,9 +97,9 @@
 [bluetooth]
     summary = Bluetooth
     format = "<span size="x-large">󰂯<b>%s</b></span>\n%b"
-    background = "{color2}"
+    background = "{color6}"
 
 [maim]
     appname = maim
     format = "<span size="x-large">📷<b>  %s </b></span>\n<i>%b</i>"
-    background = "{color2}"
+    background = "{color6}"
