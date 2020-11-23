@@ -22,7 +22,6 @@ window.thunar {{
   treeview {{
     padding: 3px;
     &:selected {{
-      text-color: $foreground;
       background: $background;
     }}
   }}

@@ -120,8 +120,8 @@ super + w
 	firefox
 # launch ranger
 super + e
-	alacritty -e ranger
-    
+    thunar    
+
 # sysinfo
 super + shift + i
     bash $HOME/.config/scripts/sysinfo.sh
@@ -193,3 +193,4 @@ XF86AudioPrev
 # lastpass
 super + shift + p
         sh $HOME/.config/rofi/scripts/passmenu.sh
+

@@ -1,6 +1,5 @@
 #!/bin/sh
-user=/home/karsam
-dir=$user/.config
+dir=$HOME/.config
 cp -r $dir/bspwm $dir/dotfiles
 cp -r $dir/sxhkd $dir/dotfiles
 cp -r $dir/dunst $dir/dotfiles

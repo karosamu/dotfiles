@@ -25,8 +25,8 @@ done
 # user time date uptime os kernel wm mem bat backlight vol wifi pkg sh weather music disk
 config=("uptime" "os" "kernel" "wm" "mem" "pkg" "sh")
 # notification urgency level
-level="critical"
-
+level="low"
+showupdates="true"
 weather_city="London"
 # disk path array ("/dev/***" "/dev/***" "dev/***")
 disk_path=("/dev/nvme0n1p1")
