@@ -2,7 +2,7 @@
 
 My dotfiles repo
 
-![BSPWM](bspwm.png "BSPWM")
+![BSPWM](bspwmcurrent.png "BSPWM")
 
 ## BSPWM
 
@@ -13,5 +13,4 @@ My dotfiles repo
 * notifications: dunst
 * menu: rofi
 * terminal: alacritty
-* theme: pywal
-* gtk: phocus+pywal
+* gtk: phocus
