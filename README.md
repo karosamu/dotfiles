@@ -21,6 +21,8 @@ My dotfiles repo
 * sxhkd-git
 * thunar-git
 * polybar-git
+* rofi
+* dunst
 * picom-ibhagwan-git
 * otf-sfmono
 * otf-san-francisco
