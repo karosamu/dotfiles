@@ -14,3 +14,34 @@ My dotfiles repo
 * menu: rofi
 * terminal: alacritty
 * gtk: phocus
+
+## Requirements
+
+* bspwm-git
+* sxhkd-git
+* thunar-git
+* polybar-git
+* picom-ibhagwan-git
+* otf-sfmono
+* otf-san-francisco
+* nerd-fonts-sf-mono
+* alacritty
+* maim
+
+Dirs:
+
+~
+  .config/
+    polybar
+    bspwm
+    sxhkd
+    dunst
+    picom
+    rofi
+    startpage
+    alacritty.yml
+  .mozilla/
+    firefox/
+      chrome
+  .themes
+    phocus
