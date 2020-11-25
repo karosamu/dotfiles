@@ -29,7 +29,7 @@ My dotfiles repo
 * maim
 
 Dirs:
-
+```
 ~
   .config/
     polybar
@@ -45,3 +45,4 @@ Dirs:
       chrome
   .themes
     phocus
+```
