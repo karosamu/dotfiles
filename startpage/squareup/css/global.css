@@ -1,0 +1,98 @@
+:root {
+	--base-bg: #b0bdbd;
+	--base-accent: #7F8279;
+	--base-secondary-bg: #314D4D;
+	--boxes-bg: #7F8279;
+	--font-color: #060F12;
+	--clock-color: #7F8279;
+	--hover-bg: #7F8279;
+	--active-bg: #060F12;
+	--button-hover: #7F8279;
+	--button-active: #060F12;
+	--gradient-start-bg: #b0bdbd;
+	--gradient-end-bg: #b0bdbd;
+	--transition-speed: 300ms;
+	--image-invert: invert(0);
+}
+
+[data-theme='dark'] {
+	--base-bg: #060F12;
+	--base-accent: #7F8279;
+	--base-secondary-bg: #314D4D;
+	--boxes-bg: #7F8279;
+	--font-color: #b0bdbd;
+	--clock-color: #7F8279;
+	--hover-bg: #7F8279;
+	--active-bg: #7F8279;
+	--button-hover: #7F8279;
+	--button-active: #b0bdbd;
+	--gradient-start-bg: #060F12;
+	--gradient-end-bg: #060F12;
+	--image-invert: invert(1);
+}
+
+* {
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+	font-variant-ligatures: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	position: fixed;
+}
+
+body {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+}
+
+/* Remove outline on input fields on chrome */
+input:focus,
+textarea:focus,
+select:focus {
+	outline: none;
+}
+
+/* Placeholder */
+::placeholder {
+	color: var(--font-color);
+	opacity: 0.65;
+}
+
+option {
+	text-align: left;
+}
+
+img {
+	user-select: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--base-bg);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--base-secondary-bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: var(--hover-bg);
+}
