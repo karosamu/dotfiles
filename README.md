@@ -28,7 +28,7 @@ My dotfiles repo
 * alacritty
 * maim
 
-Dirs:
+## Dirs
 ```
 ~
   .config/
