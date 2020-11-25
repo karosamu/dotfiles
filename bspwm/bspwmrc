@@ -7,7 +7,7 @@ echo $lc
 if [ $lc = "1" ]
 then
     xrandr --output eDP1 --mode 1920x1080 --output DP1 --off
-    bspc monitor eDP1 -d I II III IV V VI VII VIII IX X
+    bspc monitor eDP1 -d I II III IV V
 else
     xrandr --output DP1 --primary --mode 1920x1080 --rotate normal --output eDP1 --mode 1920x1080 --rotate normal --below DP1
     bspc monitor DP1 -d I II III IV V

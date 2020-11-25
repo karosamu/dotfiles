@@ -1,1 +1,10 @@
-/home/karsam/.config/rofi/config-sleek.rasi
+configuration {
+  show-icons:         true;
+  icon-theme:         "Inverse-black";
+  cycle:              true;
+  hide-scrollbar:     true;
+  disable-history:    false;
+  modi:               "drun";
+  display-drun:       "apps";
+  columns: 1;
+}

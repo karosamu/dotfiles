@@ -1,1 +1,11 @@
-/home/karsam/.config/rofi/themes/shared/settings-sleek.rasi
+/**
+ * Allows to change the settings of every menu simply by editing this file
+ */
+@import "colorschemes/dark-steel-blue.rasi"
+@import "resolutions/1920x1080.rasi"
+
+#window {
+  width: 100%;
+  height: 100%;
+}
+

@@ -1,1 +1,10 @@
-/home/karsam/.cache/wal/appmenu.rasi
+* {
+  accent:           #7F8279;
+  background:       #060F12ee;
+  background-light: #7F8279;
+  background-focus: #060F12;
+  foreground:       #b0bdbd;
+  foreground-list:  #060F12;
+  on:               #44ad4d;
+  off:              #e34039;
+}
