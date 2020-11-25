@@ -42,7 +42,8 @@ Dirs:
     alacritty.yml
   .mozilla/
     firefox/
-      chrome
+      *.default-release/
+        chrome
   .themes
     phocus
 ```
