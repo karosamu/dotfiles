@@ -1,33 +1,33 @@
 :root {
-	--base-bg: #b0bdbd;
-	--base-accent: #7F8279;
-	--base-secondary-bg: #314D4D;
-	--boxes-bg: #7F8279;
-	--font-color: #060F12;
-	--clock-color: #7F8279;
-	--hover-bg: #7F8279;
-	--active-bg: #060F12;
-	--button-hover: #7F8279;
-	--button-active: #060F12;
-	--gradient-start-bg: #b0bdbd;
-	--gradient-end-bg: #b0bdbd;
+	--base-bg: #dbd1c9;
+	--base-accent: #AC9B91;
+	--base-secondary-bg: #9D5531;
+	--boxes-bg: #AC9B91;
+	--font-color: #0F1215;
+	--clock-color: #AC9B91;
+	--hover-bg: #AC9B91;
+	--active-bg: #0F1215;
+	--button-hover: #AC9B91;
+	--button-active: #0F1215;
+	--gradient-start-bg: #dbd1c9;
+	--gradient-end-bg: #dbd1c9;
 	--transition-speed: 300ms;
 	--image-invert: invert(0);
 }
 
 [data-theme='dark'] {
-	--base-bg: #060F12;
-	--base-accent: #7F8279;
-	--base-secondary-bg: #314D4D;
-	--boxes-bg: #7F8279;
-	--font-color: #b0bdbd;
-	--clock-color: #7F8279;
-	--hover-bg: #7F8279;
-	--active-bg: #7F8279;
-	--button-hover: #7F8279;
-	--button-active: #b0bdbd;
-	--gradient-start-bg: #060F12;
-	--gradient-end-bg: #060F12;
+	--base-bg: #0F1215;
+	--base-accent: #AC9B91;
+	--base-secondary-bg: #9D5531;
+	--boxes-bg: #AC9B91;
+	--font-color: #dbd1c9;
+	--clock-color: #AC9B91;
+	--hover-bg: #AC9B91;
+	--active-bg: #AC9B91;
+	--button-hover: #AC9B91;
+	--button-active: #dbd1c9;
+	--gradient-start-bg: #0F1215;
+	--gradient-end-bg: #0F1215;
 	--image-invert: invert(1);
 }
 

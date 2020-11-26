@@ -51,5 +51,6 @@ entry {
 }
 #element.selected {
   text-color: @background-light;
+  background-color: @background-light-alpha;
 }
 

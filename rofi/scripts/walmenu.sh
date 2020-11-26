@@ -7,7 +7,7 @@ lock=" lock"
 save=" save"
 grub=" grub"
 random=" random"
-options="$random\n$lock\n$save\n$grub\n$options"
+options="$random\n$save\n$lock\n$grub\n$options"
 selection=$(echo -e "$options" | rofi -dmenu -theme themes/appsmenu.rasi)
 if [ $? -eq 0 ]; then
     case $selection in
