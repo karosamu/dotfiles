@@ -1,0 +1,28 @@
+{
+  "name": "phisch",
+  "version": "0.0.1",
+  "description": "gtk theme based on the phocus colors",
+  "scripts": {
+    "build": "node-sass scss/ -o .",
+    "watch": "node-sass scss/ -o . --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phocus/gtk.git"
+  },
+  "keywords": [
+    "gtk3",
+    "gtk3-theme",
+    "theme"
+  ],
+  "author": "Philipp Schaffrath",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/phocus/gtk/issues"
+  },
+  "homepage": "https://github.com/phocus/gtk#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "node-sass": "^4.14.1"
+  }
+}
