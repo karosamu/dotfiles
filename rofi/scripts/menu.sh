@@ -22,7 +22,8 @@ case $chosen in
         bash $HOME/.config/rofi/scripts/walmenu.sh $backscript
         ;;    
     $network)
-        nmcli d wifi rescan && bash $HOME/.cache/networkmenu.sh
+        bash $HOME/.config/rofi/scripts/networkmenu.sh
+        #nmcli d wifi rescan && bash $HOME/.cache/networkmenu.sh
         ;;
     $rpi)
         bash $HOME/.cache/rpi.sh

@@ -36,7 +36,7 @@ super + {t,shift + t,s,f}
 
 # semi-fullscreen
 super + shift + f
-	{bspc config top_padding 4 && polybar-msg cmd hide, bspc config top_padding 50 && polybar-msg cmd show}
+	{bspc config top_padding 2 && polybar-msg cmd hide, bspc config top_padding 48 && polybar-msg cmd show}
 
 # set the node flags (marked, locked, sticky, private)
 super + ctrl + {m,x,y,z}
@@ -194,3 +194,8 @@ XF86AudioPrev
 super + shift + p
         sh $HOME/.config/rofi/scripts/passmenu.sh
 
+super + shift + l
+        {bsp-layout set tiled && dunstify --replace 551 "bspwm" "Changed to default layout", bsp-layout set tall && dunstify --replace 551 "bspwm" "Changed to tall layout", bsp-layout set wide && dunstify --replace 551 "bspwm" "Changed to wide layout"}
+
+super + shift + {period,comma}
+    bspc node @parent -R {90,-90}

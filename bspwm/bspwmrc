@@ -17,10 +17,10 @@ fi
 bspc config border_radius           15  
 bspc config focused_border_color	"$focused"
 bspc config normal_border_color		"$normal"
-bspc config border_width		    3
-bspc config window_gap 			    8
+bspc config border_width		    2
+bspc config window_gap 			    4
 bspc config focus_follows_pointer	true
-bspc config top_padding             50
+bspc config top_padding             48
 bspc config split_ratio			    0.52
 bspc config borderless_monocle		true
 bspc config gapless_monocle		    false 

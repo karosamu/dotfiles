@@ -3,7 +3,7 @@ configuration {
   icon-theme:         "Inverse-black";
   cycle:              true;
   hide-scrollbar:     true;
-  disable-history:    false;
+  disable-history:    true;
   modi:               "drun";
   display-drun:       "apps";
   columns: 1;
