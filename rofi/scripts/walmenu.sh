@@ -7,10 +7,14 @@ lock=" lock"
 save=" save"
 grub=" grub"
 random=" random"
-options="$random\n$save\n$lock\n$grub\n$options"
+unsplash=" unsplash"
+options="$random\n$save\n$lock\n$grub\n$unsplash\n$options"
 selection=$(echo -e "$options" | rofi -dmenu -theme themes/appsmenu.rasi)
 if [ $? -eq 0 ]; then
     case $selection in
+        $unsplash)
+            bash $HOME/.config/scripts/randomunsplash.sh
+            ;;
         $back)
             bash $backscript
             ;;
@@ -32,8 +36,8 @@ if [ $? -eq 0 ]; then
             ;;
         $grub)
             notify-send "grub" "changing grub theme"
-            sudo $HOME/.config/matter/matter.py -i arch folder arch arch arch -ic $(xrdb ~/.Xresources -query all | grep color6 | cut -f2 | head -n 1 | tr -d '#') -bg $(xrdb ~/.Xresources -query all | grep background | cut -f2 | head -n 1 | tr -d '#') -fg $(xrdb ~/.Xresources -query all | grep foreground | cut -f2 | head -n 1 |  tr -d '#') -hl $(xrdb ~/.Xresources -query all | grep color6 | cut -f2 | head -n 1 | tr -d '#') -ff ~/Downloads/Roboto-Regular.ttf -fn Roboto Regular -fs 16
             # sudo -A matter
+            sh ~/.config/scripts/matter.sh
             notify-send "grub" "grub theme changed"
             ;;
         *)

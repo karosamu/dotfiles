@@ -1,11 +1,11 @@
 * {
-  accent:           #B0BAC6;
-  background:       #111015ee;
-  background-light: #B0BAC6;
-  background-light-alpha: #d4dae011;
-  background-focus: #111015;
-  foreground:       #d4dae0;
-  foreground-list:  #111015;
+  accent:           #887967;
+  background:       #0c0c0aee;
+  background-light: #887967;
+  background-light-alpha: #d1c2aa11;
+  background-focus: #0c0c0a;
+  foreground:       #d1c2aa;
+  foreground-list:  #0c0c0a;
   on:               #44ad4d;
   off:              #e34039;
 }
