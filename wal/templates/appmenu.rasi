@@ -1,0 +1,11 @@
+* {{
+  accent:           {color6};
+  background:       {background}ee;
+  background-light: {color6};
+  background-light-alpha: {foreground}11;
+  background-focus: {background};
+  foreground:       {foreground};
+  foreground-list:  {background};
+  on:               #44ad4d;
+  off:              #e34039;
+}}

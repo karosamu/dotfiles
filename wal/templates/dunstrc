@@ -1,20 +1,20 @@
 [frame]
     width = 0
-    color = "#887967"
+    color = "{color6}"
 
 [urgency_low]
-    background = "#0c0c0a"
-    foreground = "#887967"
+    background = "{background}"
+    foreground = "{color6}"
     timeout = 2
 
 [urgency_normal]
-    background = "#0c0c0a"
-    foreground = "#d1c2aa"
+    background = "{background}"
+    foreground = "{foreground}"
     timeout = 3
 
 [urgency_critical]
-    background = "#887967"
-    foreground = "#0c0c0a"
+    background = "{color6}"
+    foreground = "{background}"
     timeout = 15
 
 [global]
@@ -27,7 +27,7 @@
     #   %p  progress value if set ([  0%] to [100%]) or nothing
     format = "<b>%s</b>\n%b\n%p\n"
 
-    # The geometry of the window. Format: [{width}]x{height}[+/-{x}+/-{y}]
+    # The geometry of the window. Format: [{{width}}]x{{height}}[+/-{{x}}+/-{{y}}]
     # The height = number of notifications, all other variables are px
     # Omit width, provide height for full-screen width notifications
     # If width is 0, window will fit to longest message
@@ -92,14 +92,14 @@
     body = *Spotify*
     format = "%b\n[ <span font_desc='SF Pro Display 20'><i>%s</i></span>
 ]"
-    background = "#524D49"
+    background = "{color2}"
 
 [bluetooth]
     summary = Bluetooth
     format = "<span size="x-large">󰂯<b>%s</b></span>\n%b"
-    background = "#887967"
+    background = "{color6}"
 
 [maim]
     appname = maim
     format = "<span size="x-large">📷<b>  %s </b></span>\n<i>%b</i>"
-    background = "#887967"
+    background = "{color6}"

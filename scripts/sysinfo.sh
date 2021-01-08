@@ -1,31 +1,11 @@
 #!/usr/bin/env bash
-
 notification=true
-debug=false
-
-while getopts 'ndbh' flag; do
-    case "${flag}" in
-        n) notification='true'; debug='false' ;;
-        d) notification='false'; debug='true' ;;
-        b) notification='true'; debug='true' ;;
-        h) echo -ne "Notifetch\n" 
-           echo "Use -n to only display the notification (default)";
-           echo "Use -d to only display values in the terminal";
-           echo "Use -b to display both";
-           exit 1;;
-        *) echo -ne "Notifetch\n"
-           echo "Use -n to only display the notification (default)";
-           echo "Use -d to only display values in the terminal";
-           echo "Use -b to display both";
-           exit 1 ;;
-    esac
-done
 
 # Possible values:
 # user time date uptime os kernel wm mem bat backlight vol wifi pkg sh weather music disk
-config=("uptime" "os" "kernel" "wm" "mem" "pkg" "sh")
+config=("user" "uptime" "os" "kernel" "wm" "mem" "pkg" "sh")
 # notification urgency level
-level="low"
+level="normal"
 showupdates="true"
 weather_city="London"
 # disk path array ("/dev/***" "/dev/***" "dev/***")

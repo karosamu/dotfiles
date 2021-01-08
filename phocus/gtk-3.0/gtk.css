@@ -515,12 +515,15 @@ window.thunar {
     background: none; }
   window.thunar grid *:selected,
   window.thunar grid *:active {
-    background: #d1c2aa;
+    background: #887967;
     border-radius: 3px; }
   window.thunar .sidebar {
     background-color: rgba(12, 12, 10, 0.35);
     box-shadow: inset -20px 20px 15px -25px rgba(0, 0, 0, 0.2);
     padding: 1rem; }
+    window.thunar .sidebar *:selected,
+    window.thunar .sidebar *:active {
+      color: #887967; }
   window.thunar treeview {
     padding: 3px; }
     window.thunar treeview:selected {

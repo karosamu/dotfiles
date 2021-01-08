@@ -192,7 +192,8 @@ XF86AudioPrev
 
 # lastpass
 super + shift + p
-        sh $HOME/.config/rofi/scripts/passmenu.sh
+        rofi -modi lpass:rofi-lpass -show lpass -theme ~/.config/rofi/themes/appsmenu.rasi
+        #sh $HOME/.config/rofi/scripts/passmenu.sh
 
 super + shift + l
         {bsp-layout set tiled && dunstify --replace 551 "bspwm" "Changed to default layout", bsp-layout set tall && dunstify --replace 551 "bspwm" "Changed to tall layout", bsp-layout set wide && dunstify --replace 551 "bspwm" "Changed to wide layout"}
