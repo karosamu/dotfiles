@@ -8,15 +8,19 @@ window.thunar {
   grid {
     *:selected,
     *:active {
-      background: $foreground;
+      background: $color6;
       border-radius: 3px;
     }
   }
 
   .sidebar {
-    background-color: rgba(12,20,22, 0.35);
+    background-color: rgba(12,12,10, 0.35);
     box-shadow: inset -20px 20px 15px -25px rgba(0, 0, 0, 0.2);
     padding: 1rem;
+    *:selected,
+    *:active {
+      color: $color6;
+    }
   }
 
   treeview {
