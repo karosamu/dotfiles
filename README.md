@@ -2,7 +2,7 @@
 
 My dotfiles repo
 
-![BSPWM](bspwmcurrent.png "BSPWM")
+![BSPWM](bspwmlow.png "BSPWM")
 
 ## BSPWM
 
