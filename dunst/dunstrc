@@ -45,7 +45,7 @@
     show_age_threshold = 60     # Show if message is older than x seconds (-1 to disable)
     word_wrap = yes             # Split notifications into multiple lines if they don't fit into geometry
     ignore_newline = no         # Ignore "\n"
-    transparency = 20           # The transparency of the window. 0 (opaque) to 100 (transparent) - requires compositing window manager (xcompmgr, compiz, compton, etc)
+    transparency = 0           # The transparency of the window. 0 (opaque) to 100 (transparent) - requires compositing window manager (xcompmgr, compiz, compton, etc)
     shrink = no                 # Shrink window if it's smaller than the width (ignored if width is 0)
     monitor = 0                 # Display notifications on the monitor indicated (0 is default)
     follow = none              # Follow mouse/keyboard/none

@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 notification=true
+debug=false
 
 # Possible values:
 # user time date uptime os kernel wm mem bat backlight vol wifi pkg sh weather music disk

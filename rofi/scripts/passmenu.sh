@@ -57,13 +57,13 @@ fi
 lpass status
 
 if [ $? -ne 0 ]; then
-    ZENITY_INPUT="$(sh $HOME/.config/scripts/uname.sh)"
+    #ZENITY_INPUT="$(sh $HOME/.config/scripts/uname.sh)"
 
-    if [ -z "$ZENITY_INPUT" ]; then
-        exit
-    fi
+    #if [ -z "$ZENITY_INPUT" ]; then
+    #    exit
+    #fi
 
-    lpass login "$ZENITY_INPUT"
+    lpass login "karolissamuolis@gmail.com"
 
     if [ $? -ne 0 ]; then
         dunstify -u critical -r 701 "Failed to login to LastPass. Please check your credentials and try again."
@@ -71,18 +71,19 @@ if [ $? -ne 0 ]; then
     fi
 fi
 
-ROFI_SELECTION="$(lpass ls --format '•%an' | grep '•' | tr '•' '\n' | sed '/^$/d' | ${MENU_CMD} ${MENU_ARGS[@]})"
-
-if [ -z "${ROFI_SELECTION}" ]; then
-    exit
-fi
-
-lpass show -c --password "${ROFI_SELECTION}"
-
-if [ $? -ne 0 ]; then
-    dunstify -u critical -r 701 "Login successful but unable to retrieve password for ${ROFI_SELECTION}\n\nTry running this script in a terminal emulator to see error output from lpass."
-else
-    if [ $# -lt 1 ]; then
-        dunstify -r 701 "Password for ${ROFI_SELECTION} saved to clipboard."
-    fi
-fi
+#ROFI_SELECTION="$(lpass ls --format '•%an' | grep '•' | tr '•' '\n' | sed '/^$/d' | ${MENU_CMD} ${MENU_ARGS[@]})"
+#
+#if [ -z "${ROFI_SELECTION}" ]; then
+#    exit
+#fi
+#
+#lpass show -c --password "${ROFI_SELECTION}"
+#
+#if [ $? -ne 0 ]; then
+#    dunstify -u critical -r 701 "Login successful but unable to retrieve password for ${ROFI_SELECTION}\n\nTry running this script in a terminal emulator to see error output from lpass."
+#else
+#    if [ $# -lt 1 ]; then
+#        dunstify -r 701 "Password for ${ROFI_SELECTION} saved to clipboard."
+#    fi
+#fi
+rofi -modi lpass:rofi-lpass -show lpass -theme ~/.config/rofi/themes/appsmenu.rasi

@@ -139,7 +139,8 @@ super + l
 
 # printscreen selected area
 shift + Print
-	maim -us -c 255,255,255,0.1 -l /tmp/screenshot.png; cat /tmp/screenshot.png | xclip -selection clipboard -t image/png; cp /tmp/screenshot.png $HOME/Pictures/Screenshots/(date +%s).png && dunstify --replace 554 "maim" "Screenshot copied to clipboard"
+    sh $HOME/.config/scripts/scrot.sh
+	#maim -us -c 105,117,95,0.1 -l /tmp/screenshot.png; cat /tmp/screenshot.png | xclip -selection clipboard -t image/png; cp /tmp/screenshot.png $HOME/Pictures/Screenshots/(date +%s).png && dunstify --replace 554 "maim" "Screenshot copied to clipboard"
 
 # printscreen entire screen
 control + Print
@@ -192,11 +193,15 @@ XF86AudioPrev
 
 # lastpass
 super + shift + p
-        rofi -modi lpass:rofi-lpass -show lpass -theme ~/.config/rofi/themes/appsmenu.rasi
-        #sh $HOME/.config/rofi/scripts/passmenu.sh
+        sh $HOME/.config/rofi/scripts/passmenu.sh
+        #rofi -modi lpass:rofi-lpass -show lpass -theme ~/.config/rofi/themes/appsmenu.rasi
 
 super + shift + l
         {bsp-layout set tiled && dunstify --replace 551 "bspwm" "Changed to default layout", bsp-layout set tall && dunstify --replace 551 "bspwm" "Changed to tall layout", bsp-layout set wide && dunstify --replace 551 "bspwm" "Changed to wide layout"}
 
 super + shift + {period,comma}
     bspc node @parent -R {90,-90}
+
+
+alt + Tab
+    rofi -show window -theme ~/.config/rofi/themes/appsmenu.rasi

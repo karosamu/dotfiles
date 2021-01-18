@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rofi_command="rofi -theme themes/appsmenu.rasi"
+rofi_command="rofi -theme themes/appsmenu.rasi -p "power""
 
 #### Options ###
 power_off=" Power off"
@@ -14,7 +14,7 @@ options="$lock\n$power_off\n$reboot\n$suspend\n$log_out"
 chosen="$(echo -e "$options" | $rofi_command -dmenu -selected-row 0)"
 case $chosen in
     $lock)
-        betterlockscreen -l dimblur -t "karsam"
+        setxkbmap gb -option caps:escape && betterlockscreen -l dimblur -t "karsam"
         ;;    
     $power_off)
         systemctl poweroff

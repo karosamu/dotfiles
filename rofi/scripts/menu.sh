@@ -7,14 +7,14 @@ echo $backscript
 #### Options ###
 theme=" Theme"
 network="直 Network"
-rpi=" Raspberry"
+rpi="力 Server"
 mount=" Mount"
 firewall=" Firewall"
 bt=" Bluetooth"
 hama=" Hamachi"
 rofi=" Rofi"
 # Variable passed to rofi
-options="$theme\n$mount\n$network\n$rpi\n$hama\n$firewall\n$bt\n$rofi"
+options="$theme\n$mount\n$rpi\n$firewall\n$bt"
 
 chosen="$(echo -e "$options" | $rofi_command -dmenu -selected-row 0)"
 case $chosen in

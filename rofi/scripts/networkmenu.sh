@@ -5,7 +5,7 @@
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-FIELDS=SSID,SECURITY
+FIELDS=SSID,BARS
 POSITION=0
 YOFF=0
 XOFF=0
@@ -37,22 +37,22 @@ fi
 
 
 if [[ "$CONSTATE" =~ "enabled" ]]; then
-	TOGGLE="toggle off"
+	TOGGLE="Toggle off"
 elif [[ "$CONSTATE" =~ "disabled" ]]; then
-	TOGGLE="toggle on"
+	TOGGLE="Toggle on"
 fi
 
 
 
-CHENTRY=$(echo -e "$TOGGLE\nmanual\n$LIST" | uniq -u | rofi -dmenu -p "Wi-Fi SSID: " -theme ~/.config/rofi/themes/appsmenu.rasi)
+CHENTRY=$(echo -e "$TOGGLE\nManual\n$LIST" | uniq -u | rofi -dmenu -p "Wi-Fi SSID: " -theme ~/.config/rofi/themes/appsmenu.rasi)
 #echo "$CHENTRY"
 CHSSID=$(echo "$CHENTRY" | sed  's/\s\{2,\}/\|/g' | awk -F "|" '{print $1}')
 #echo "$CHSSID"
 
 # If the user inputs "manual" as their SSID in the start window, it will bring them to this screen
-if [ "$CHENTRY" = "manual" ] ; then
+if [ "$CHENTRY" = "Manual" ] ; then
 	# Manual entry of the SSID and password (if appplicable)
-	MSSID=$(echo "enter the SSID of the network (SSID,password)" | rofi -dmenu -p "Manual Entry: " -lines 1 -theme ~/.config/rofi/themes/appsmenu.rasi)
+	MSSID=$(echo "Enter the SSID of the network (SSID,password)" | rofi -dmenu -p "Manual Entry: " -lines 1 -theme ~/.config/rofi/themes/appsmenu.rasi)
 	# Separating the password from the entered string
 	MPASS=$(echo "$MSSID" | awk -F "," '{print $2}')
 
@@ -66,10 +66,10 @@ if [ "$CHENTRY" = "manual" ] ; then
 		nmcli dev wifi con "$MSSID" password "$MPASS"
 	fi
 
-elif [ "$CHENTRY" = "toggle on" ]; then
+elif [ "$CHENTRY" = "Toggle on" ]; then
 	nmcli radio wifi on
 
-elif [ "$CHENTRY" = "toggle off" ]; then
+elif [ "$CHENTRY" = "Toggle off" ]; then
 	nmcli radio wifi off
 
 else

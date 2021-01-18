@@ -7,9 +7,13 @@ status=" Status:$(hamachi | grep status | cut -f 2 -d ':')"
 on=" Turn hamachi on"
 off=" Turn hamachi off"
 # Variable passed to rofi
-options="$status\n$on\n$off"
-
+options="$on\n$off"
+#if [ "$(systemctl status logmein-hamachi.service | grep "Active" | cut -f 2 -d '(' | cut -f 1 -d ')')" -eq "running"]; then
+#    echo "?"
+#    options="$status\n$options"
+#fi
 chosen="$(echo -e "$options" | $rofi_command -dmenu -selected-row 0)"
+
 case $chosen in
     $on)
         sudo -A systemctl start logmein-hamachi

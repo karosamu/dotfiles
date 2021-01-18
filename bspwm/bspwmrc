@@ -3,7 +3,6 @@ focused=$(xrdb ~/.Xresources -query all | grep color6 | cut -f2 | head -n 1)
 normal=$(xrdb ~/.Xresources -query all | grep background | cut -f2 | head -n 1)
 
 lc=$(xrandr | grep " connected" | wc -l)
-echo $lc
 if [ $lc = "1" ]
 then
     xrandr --output eDP1 --mode 1920x1080 --output DP1 --off
