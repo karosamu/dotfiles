@@ -1,15 +1,15 @@
+#!/bin/sh
 wallpaperdir="$HOME/Pictures/Wallpapers"
-options=$(ls -d "$wallpaperdir"/* | sed "s:\($wallpaperdir\)\(.*\)\/:\2:")
-backscript="$HOME/.config/rofi/scripts/menu.sh"
-echo $backscript
-back=" back"
-lock=" lock"
-save=" save"
-grub=" grub"
-random=" random"
+#options=$(ls -d "$wallpaperdir"/* | sed "s:\($wallpaperdir\)\(.*\)\/:\2:")
+back=""
+lock=""
+save=""
+grub=""
+random=""
 unsplash=" unsplash"
-options="$random\n$save\n$lock\n$grub\n$unsplash\n$options"
-selection=$(echo -e "$options" | rofi -dmenu -theme themes/appsmenu.rasi)
+folders=""
+options="$lock\n$grub\n$random\n$save\n$folders"
+selection=$(echo -e "$options" | rofi -dmenu -theme themes/appsmenu2.rasi -selected-row 2)
 if [ $? -eq 0 ]; then
     case $selection in
         $unsplash)
@@ -39,6 +39,9 @@ if [ $? -eq 0 ]; then
             # sudo -A matter
             sh ~/.config/scripts/matter.sh
             notify-send "grub" "grub theme changed"
+            ;;
+        $folders)
+            sh ~/.config/rofi/scripts/foldersel.sh
             ;;
         *)
             bash $HOME/.config/rofi/scripts/selectopt.sh $wallpaperdir/$selection/

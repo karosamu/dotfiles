@@ -3,9 +3,9 @@
 
 # SETTINGS {{{ ---
 
-active_text_color=$(xrdb ~/.Xresources -query all | grep foreground | cut -f2 | head -n 1)
+active_text_color=$(xrdb ~/.Xresources -query all | grep colo6 | cut -f2 | head -n 1)
 
-inactive_text_color=$(xrdb ~/.Xresources -query all | grep color6 | cut -f2 | head -n 1)
+inactive_text_color=$(xrdb ~/.Xresources -query all | grep foreground | cut -f2 | head -n 1)
 
 separator="·"
 show="window_class" # options: window_title, window_class, window_classname
@@ -180,6 +180,45 @@ generate_window_list() {
 				echo "$w_name" | tr '[:lower:]' '[:upper:]'
 				) ;;
 		esac
+
+        case "$w_name" in
+            "Alacritty")
+                w_name=""
+                ;;
+            "Code")
+                w_name=""
+                ;;
+            "Chromium")
+                w_name=""
+                ;;
+            "beta")
+                w_name=""
+                ;;
+            "Thunar")
+                w_name=""
+                ;;
+            "firefox")
+                w_name=""
+                ;;
+            "Nm-connection-editor")
+                w_name=""
+                ;;
+            "File-roller")
+                w_name="遲"
+                ;;
+            "discord")
+                w_name="ﭮ"
+                ;;
+            "Spotify")
+                w_name=""
+                ;;
+            "Steam")
+                w_name=""
+                ;;
+            "pwmt")
+                w_name=""
+                ;;
+        esac
 
 		# Truncate displayed name to user-selected limit
 		if [ "${#w_name}" -gt "$char_limit" ]; then

@@ -20,7 +20,7 @@ bspc config border_width		    2
 bspc config window_gap 			    4
 bspc config focus_follows_pointer	true
 bspc config top_padding             48
-bspc config split_ratio			    0.52
+bspc config split_ratio			    0.5
 bspc config borderless_monocle		true
 bspc config gapless_monocle		    false 
 bspc config single_monocle		    true

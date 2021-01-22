@@ -1,22 +1,22 @@
 #!/bin/bash
 
-rofi_command="rofi -theme themes/appsmenu.rasi"
+rofi_command="rofi -theme themes/appsmenu2.rasi"
 backscript="$(dirname $0)/$(basename $0) $1"
 echo $backscript
 
 #### Options ###
-theme=" Theme"
-network="直 Network"
-rpi="力 Server"
-mount=" Mount"
-firewall=" Firewall"
-bt=" Bluetooth"
-hama=" Hamachi"
-rofi=" Rofi"
+theme=""
+network="直"
+rpi="力"
+mount=""
+firewall=""
+bt=""
+hama=""
+rofi=""
 # Variable passed to rofi
-options="$theme\n$mount\n$rpi\n$firewall\n$bt"
+options="$firewall\n$rpi\n$theme\n$bt\n$mount"
 
-chosen="$(echo -e "$options" | $rofi_command -dmenu -selected-row 0)"
+chosen="$(echo -e "$options" | $rofi_command -dmenu -selected-row 2)"
 case $chosen in
     $theme)
         bash $HOME/.config/rofi/scripts/walmenu.sh $backscript

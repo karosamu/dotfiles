@@ -115,10 +115,13 @@ super + shift + {Left,Down,Up,Right}
 # launch alacritty
 super + Return
 	alacritty
-# launch firefox
+# launch chromium
 super + w
-	firefox
-# launch ranger
+	chromium --force-dark-mode --enable-features=WebUIDarkMode
+# launch firefox
+super + shift + w
+    firefox
+# launch thunar
 super + e
     thunar    
 
@@ -205,3 +208,10 @@ super + shift + {period,comma}
 
 alt + Tab
     rofi -show window -theme ~/.config/rofi/themes/appsmenu.rasi
+
+super + ctrl + n
+    {nm-applet &,killall nm-applet}
+
+
+super + shift + s
+    sh $HOME/Downloads/rofi/1080p/applets/android/powermenu.sh

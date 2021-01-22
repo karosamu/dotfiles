@@ -1,20 +1,20 @@
 [frame]
     width = 0
-    color = "#887967"
+    color = "#BF857A"
 
 [urgency_low]
-    background = "#0c0c0a"
-    foreground = "#887967"
+    background = "#121313"
+    foreground = "#BF857A"
     timeout = 2
 
 [urgency_normal]
-    background = "#0c0c0a"
-    foreground = "#d1c2aa"
+    background = "#121313"
+    foreground = "#e4c6c0"
     timeout = 3
 
 [urgency_critical]
-    background = "#887967"
-    foreground = "#0c0c0a"
+    background = "#BF857A"
+    foreground = "#121313"
     timeout = 15
 
 [global]
@@ -92,14 +92,14 @@
     body = *Spotify*
     format = "%b\n[ <span font_desc='SF Pro Display 20'><i>%s</i></span>
 ]"
-    background = "#524D49"
+    background = "#92635C"
 
 [bluetooth]
     summary = Bluetooth
     format = "<span size="x-large">󰂯<b>%s</b></span>\n%b"
-    background = "#887967"
+    background = "#BF857A"
 
 [maim]
     appname = maim
     format = "<span size="x-large">📷<b>  %s </b></span>\n<i>%b</i>"
-    background = "#887967"
+    background = "#BF857A"

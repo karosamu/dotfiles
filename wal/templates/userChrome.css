@@ -67,14 +67,14 @@ tab[selected="true"] .tab-background {{
 
 .tab-close-button {{
 	transition: all 0.3s ease !important;
-    border-radius: 30px !important;
+    border-radius: 5px !important;
 }}
 .tab-close-button:hover {{
     fill-opacity: 0.2 !important;
 }}
 
 .tabbrowser-tab > .tab-stack > .tab-background {{
-	border-radius: 50px !important;
+	border-radius: 5px !important;
 }}
 .tabbrowser-tab > .tab-stack > .tab-background:not([selected="true"]) {{
 	transition: all 0.3s ease !important;
@@ -95,7 +95,7 @@ tab[selected="true"] .tab-background {{
 toolbarbutton.bookmark-item {{
 	transition: all 0.3s ease !important;
     padding: 3px 5px !important;
-	border-radius: 20px !important;
+	border-radius: 5px !important;
 }}
 toolbarbutton.bookmark-item .toolbarbutton-icon {{
 	fill: rgba(var(--main-bgcolor), 1) !important;
@@ -125,7 +125,7 @@ toolbarbutton.bookmark-item .toolbarbutton-icon {{
 .titlebar-button > .toolbarbutton-icon {{
 	transition: all 0.3s ease !important;
 	list-style-image: none;
-	border-radius: 10px;
+	border-radius: 5px;
 	background: rgba(var(--main-bgcolor), 1);
 }}
 .titlebar-button:hover > .toolbarbutton-icon {{
@@ -149,7 +149,7 @@ toolbar #tabs-newtab-button:not([disabled="true"]):-moz-any([open], [checked], :
 toolbar #tabs-newtab-button:not([disabled="true"]):-moz-any([open], [checked], :active) > .toolbarbutton-icon {{
 	transition: all 0.3s ease !important;
 	fill: rgba(var(--main-bgcolor), 1) !important;
-	border-radius: 30px !important;
+	border-radius: 5px !important;
 	background-color: rgba(var(--transparent-bgcolor), 0.2) !important;
 }}
 toolbar #tabs-newtab-button:not([disabled="true"]):not([checked]):not([open]):not(:active):hover > .toolbarbutton-icon {{
@@ -169,13 +169,13 @@ toolbar#nav-bar toolbarbutton #fxa-avatar-image {{
 	fill: rgba(var(--main-bgcolor), 1) !important;
 }}
 #urlbar > #urlbar-background {{
-	border-radius: 10px !important;
+	border-radius: 5px !important;
 	border: 0 !important;
 	background-color: rgba(var(--main-bgcolor), 1) !important;
 }}
 #urlbar:not([focused="true"]) > #urlbar-background,
 #urlbar > #urlbar-input-container {{
-	border-radius: 40px !important;
+	border-radius: 5px !important;
     color: rgba(var(--accent-color), 1) !important;
 }}
 #PersonalToolbar .toolbarbutton-1:not([disabled="true"]):not([checked]):not([open]):not(:active):hover, .tabbrowser-arrowscrollbox:not([scrolledtostart="true"])::part(scrollbutton-up):hover, .tabbrowser-arrowscrollbox:not([scrolledtoend="true"])::part(scrollbutton-down):hover, .findbar-button:not(:-moz-any([checked="true"], [disabled="true"])):hover, toolbarbutton.bookmark-item:not(.subviewbutton):hover:not([disabled="true"]):not([open]), toolbar .toolbarbutton-1:not([disabled="true"]):not([checked]):not([open]):not(:active):hover > .toolbarbutton-icon, toolbar .toolbarbutton-1:not([disabled="true"]):not([checked]):not([open]):not(:active):hover > .toolbarbutton-text, toolbar .toolbarbutton-1:not([disabled="true"]):not([checked]):not([open]):not(:active):hover > .toolbarbutton-badge-stack {{
@@ -201,7 +201,7 @@ toolbar#nav-bar toolbarbutton #fxa-avatar-image {{
 /*================== SEARCH BAR ==================*/
 searchbar#searchbar {{
 	margin-top: 4px !important;
-	border-radius: 40px !important;
+	border-radius: 5px !important;
 	border: 0 !important;
 	fill: rgba(var(--accent-color), 1) !important;
 	background-color: rgba(var(--main-bgcolor), 1) !important;

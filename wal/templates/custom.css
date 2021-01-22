@@ -42,7 +42,7 @@
       --slider-background: var(--menu-border-color);
   
       --popout-color: var(--bar-color);
-      --popout-radius: 7px;
+      --popout-radius: 4px;
   
       --menu-hover-color: rgba(var(--background-alt),0.3);
       --menu-hover-color-alt: rgba(var(--background-alt),0.3);
@@ -54,7 +54,7 @@
       --input-text-color: var(--foreground);
       --input-placeholder-color: var(--foreground);
       --select-input-color: var(--color6);
-      --textarea-radius: 22px;
+      --textarea-radius: 8px;
   
       --checkbox-border-checked: transparent;
       --checkbox-border-unchecked: var(--menu-border-color);
@@ -5040,8 +5040,8 @@ textarea.input-cIJ7To::-webkit-input-placeholder {{
 
 .messageContainer-gbhlwo,
 .messages-3G3erD {{
-	background-color: #191919;
-	border-radius: 0 0 8px 8px;
+	background-color: {background};
+	border-radius: 0 0 4px 4px;
 }}
 
 /* POPOUT MENUS -> SEARCH OPTIONS */
@@ -5376,7 +5376,7 @@ textarea.input-cIJ7To::-webkit-input-placeholder {{
 .searchBar-1Vaz-O .searchBarComponent-yxeVIL {{
 	padding: 0 2px;
 	background: var(--input-bg) !important;
-	border-radius: 17px;
+	border-radius: 8px;
 }}
 
 .header-1R_AjF .search-bar .search-bar-inner {{
