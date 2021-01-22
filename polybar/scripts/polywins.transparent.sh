@@ -3,7 +3,7 @@
 
 # SETTINGS {{{ ---
 
-active_text_color=$(xrdb ~/.Xresources -query all | grep colo6 | cut -f2 | head -n 1)
+active_text_color=$(xrdb ~/.Xresources -query all | grep color6 | cut -f2 | head -n 1)
 
 inactive_text_color=$(xrdb ~/.Xresources -query all | grep foreground | cut -f2 | head -n 1)
 
