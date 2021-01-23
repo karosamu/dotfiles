@@ -44,7 +44,7 @@ fi
 
 
 
-CHENTRY=$(echo -e "$TOGGLE\nManual\n$LIST" | uniq -u | rofi -dmenu -p "Wi-Fi SSID: " -theme ~/.config/rofi/themes/appsmenu.rasi)
+CHENTRY=$(echo -e "$TOGGLE\nManual\n$LIST" | uniq -u | rofi -dmenu -p "Wi-Fi SSID: " -theme ~/.config/rofi/themes/list.rasi)
 #echo "$CHENTRY"
 CHSSID=$(echo "$CHENTRY" | sed  's/\s\{2,\}/\|/g' | awk -F "|" '{print $1}')
 #echo "$CHSSID"
@@ -52,7 +52,7 @@ CHSSID=$(echo "$CHENTRY" | sed  's/\s\{2,\}/\|/g' | awk -F "|" '{print $1}')
 # If the user inputs "manual" as their SSID in the start window, it will bring them to this screen
 if [ "$CHENTRY" = "Manual" ] ; then
 	# Manual entry of the SSID and password (if appplicable)
-	MSSID=$(echo "Enter the SSID of the network (SSID,password)" | rofi -dmenu -p "Manual Entry: " -lines 1 -theme ~/.config/rofi/themes/appsmenu.rasi)
+	MSSID=$(echo "Enter the SSID of the network (SSID,password)" | rofi -dmenu -p "Manual Entry: " -lines 1 -theme ~/.config/rofi/themes/list.rasi)
 	# Separating the password from the entered string
 	MPASS=$(echo "$MSSID" | awk -F "," '{print $2}')
 
@@ -84,7 +84,7 @@ else
 		nmcli con up "$CHSSID"
 	else
 		if [[ "$CHENTRY" =~ "WPA2" ]] || [[ "$CHENTRY" =~ "WEP" ]]; then
-			WIFIPASS=$(echo "if connection is stored, hit enter" | rofi -dmenu -p "password: " -lines 1 -theme ~/.config/rofi/themes/appsmenu.rasi )
+			WIFIPASS=$(echo "if connection is stored, hit enter" | rofi -dmenu -p "password: " -lines 1 -theme ~/.config/rofi/themes/list.rasi )
 		fi
 		nmcli dev wifi con "$CHSSID" password "$WIFIPASS"
 	fi

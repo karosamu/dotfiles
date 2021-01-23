@@ -9,7 +9,7 @@ random=""
 unsplash=" unsplash"
 folders=""
 options="$lock\n$grub\n$random\n$save\n$folders"
-selection=$(echo -e "$options" | rofi -dmenu -theme themes/appsmenu2.rasi -selected-row 2)
+selection=$(echo -e "$options" | rofi -dmenu -theme themes/icons.rasi -selected-row 2)
 if [ $? -eq 0 ]; then
     case $selection in
         $unsplash)

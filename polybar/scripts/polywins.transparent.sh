@@ -10,7 +10,7 @@ inactive_text_color=$(xrdb ~/.Xresources -query all | grep foreground | cut -f2 
 separator="·"
 show="window_class" # options: window_title, window_class, window_classname
 forbidden_classes="Polybar Conky Gmrun"
-empty_desktop_message=""
+empty_desktop_message=""
 
 char_limit=20
 max_windows=15
@@ -217,6 +217,15 @@ generate_window_list() {
                 ;;
             "pwmt")
                 w_name=""
+                ;;
+            "exe")
+                w_name=""
+                ;;
+            "zoom")
+                w_name=""
+                ;;
+            "vlc")
+                w_name="嗢"
                 ;;
         esac
 

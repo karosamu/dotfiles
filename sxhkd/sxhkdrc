@@ -196,7 +196,8 @@ XF86AudioPrev
 
 # lastpass
 super + shift + p
-        sh $HOME/.config/rofi/scripts/passmenu.sh
+        bitwarden-desktop
+        #sh $HOME/.config/rofi/scripts/passmenu.sh
         #rofi -modi lpass:rofi-lpass -show lpass -theme ~/.config/rofi/themes/appsmenu.rasi
 
 super + shift + l

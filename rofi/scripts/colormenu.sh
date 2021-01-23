@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rofi_command="rofi -theme themes/appsmenu.rasi"
+rofi_command="rofi -theme themes/list.rasi"
 
 #### Options ###
 rgb=" RGB"

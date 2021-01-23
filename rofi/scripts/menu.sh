@@ -1,11 +1,11 @@
 #!/bin/bash
 
-rofi_command="rofi -theme themes/appsmenu2.rasi"
+rofi_command="rofi -theme themes/icons.rasi"
 backscript="$(dirname $0)/$(basename $0) $1"
 echo $backscript
 
 #### Options ###
-theme=""
+theme=""
 network="直"
 rpi="力"
 mount=""

@@ -51,7 +51,7 @@ if [ $? -ne 0 ]; then
     MENU_ARGS=
 else
     MENU_CMD="rofi"
-    MENU_ARGS=("-dmenu" "-p lpass:" "-theme $HOME/.config/rofi/themes/appsmenu.rasi")
+    MENU_ARGS=("-dmenu" "-p lpass:" "-theme $HOME/.config/rofi/themes/list.rasi")
 fi
 
 lpass status
@@ -86,4 +86,4 @@ fi
 #        dunstify -r 701 "Password for ${ROFI_SELECTION} saved to clipboard."
 #    fi
 #fi
-rofi -modi lpass:rofi-lpass -show lpass -theme ~/.config/rofi/themes/appsmenu.rasi
+rofi -modi lpass:rofi-lpass -show lpass -theme ~/.config/rofi/themes/list.rasi

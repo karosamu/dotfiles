@@ -1,11 +1,11 @@
 #!/bin/bash
 
-rofi_command="rofi -theme themes/appsmenu2.rasi -p "power""
+rofi_command="rofi -theme themes/icons.rasi -p "power""
 
 #### Options ###
-power_off=""
+power_off="襤"
 reboot="勒"
-lock=""
+lock=""
 suspend=""
 log_out="﫼"
 # Variable passed to rofi
