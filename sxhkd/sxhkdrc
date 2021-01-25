@@ -112,9 +112,9 @@ super + shift + {Left,Down,Up,Right}
 
 # APPLICATION KEYBINDINGS (Super + Alt + Key)
 
-# launch alacritty
+# launch urxvt
 super + Return
-	alacritty
+	urxvt
 # launch chromium
 super + w
 	chromium --force-dark-mode --enable-features=WebUIDarkMode

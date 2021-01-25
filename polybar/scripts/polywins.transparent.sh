@@ -183,19 +183,22 @@ generate_window_list() {
 
         case "$w_name" in
             "Alacritty")
-                w_name=""
+                w_name=""
+                ;;
+            "URxvt")
+                w_name=""
                 ;;
             "Code")
-                w_name=""
+                w_name=""
                 ;;
             "Chromium")
-                w_name=""
+                w_name=""
                 ;;
             "beta")
-                w_name=""
+                w_name=""
                 ;;
             "Thunar")
-                w_name=""
+                w_name=""
                 ;;
             "firefox")
                 w_name=""
@@ -204,7 +207,7 @@ generate_window_list() {
                 w_name=""
                 ;;
             "File-roller")
-                w_name="遲"
+                w_name=""
                 ;;
             "discord")
                 w_name="ﭮ"
@@ -213,10 +216,10 @@ generate_window_list() {
                 w_name=""
                 ;;
             "Steam")
-                w_name=""
+                w_name="戮"
                 ;;
             "pwmt")
-                w_name=""
+                w_name=""
                 ;;
             "exe")
                 w_name=""
@@ -226,6 +229,9 @@ generate_window_list() {
                 ;;
             "vlc")
                 w_name="嗢"
+                ;;
+            "Font-manager")
+                w_name=""
                 ;;
         esac
 

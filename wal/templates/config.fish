@@ -1,5 +1,5 @@
 cat /home/karsam/.cache/wal/sequences
-sh $HOME/.profile
+sh /home/karsam/.profile
 set -gx LPASS_DISABLE_PINENTRY 1
 set -gx LPASS_ASKPASS ~/.config/scripts/passwd.sh
 set -gx SUDO_ASKPASS ~/.config/scripts/passwd.sh
