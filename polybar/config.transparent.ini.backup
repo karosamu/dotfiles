@@ -37,7 +37,7 @@ font-1 = "SFMono Nerd Font Mono:size=25;6"
 font-2 = "SFMono Nerd Font Mono:size=50;12"
 
 modules-left = workspaces
-modules-center = 
+modules-center = polywins 
 modules-right = backlight alsa battery xkeyboard date dunst 
 
 separator =
@@ -338,19 +338,19 @@ format = <label-state>
 format-padding = 0
 label-monitor = %name%
 
-label-active = 
+label-active = 
 label-active-foreground = ${color.shade6}
 label-active-background = ${color.bg}
 
-label-occupied =  
+label-occupied =  
 label-occupied-background = ${color.bg}
 label-occupied-foreground = ${color.fg}
 
-label-urgent = 𥉉
+label-urgent = 
 label-urgent-foreground = ${color.shade6}
 label-urgent-background = ${color.bg}
 
-label-empty = 
+label-empty =  
 label-empty-background = ${color.bg}
 label-empty-foreground = ${color.fg}
 

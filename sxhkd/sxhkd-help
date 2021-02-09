@@ -2,4 +2,4 @@
 
 awk '/^[a-z]/ && last {print $0,"\t",last} {last=""} /^#/{last=$0}' ~/.config/sxhkd/sxhkdrc{,.common} |
     column -t -s $'\t' |
-    rofi -theme $HOME/.config/rofi/themes/list.rasi -dmenu -i
+    rofi -theme $HOME/.config/rofi/themes/list-full.rasi -dmenu -i

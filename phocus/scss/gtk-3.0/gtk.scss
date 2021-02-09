@@ -3,3 +3,6 @@
 @import "functions";
 @import "components";
 @import "applications";
+.view {
+    background-color: $background;
+}

@@ -1,4 +1,4 @@
 #!/bin/sh
 
-rofi -no-lazy-grab -show drun -theme themes/list.rasi
+rofi -no-lazy-grab -show drun -theme themes/middle-list.rasi
 

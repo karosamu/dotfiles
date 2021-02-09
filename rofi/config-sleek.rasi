@@ -1,6 +1,7 @@
 configuration {
   show-icons:         false;
-  icon-theme:         "Inverse-black";
+  location:           1;
+  icon-theme:         "Reversal-black";
   cycle:              true;
   hide-scrollbar:     true;
   disable-history:    true;

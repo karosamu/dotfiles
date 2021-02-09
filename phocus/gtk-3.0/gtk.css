@@ -572,3 +572,6 @@ window.geary-main-window {
     background-image: image(rgba(255, 255, 255, 0));
     background-size: 1px 1px;
     background-position: center center; }
+
+.view {
+  background-color: #121313; }

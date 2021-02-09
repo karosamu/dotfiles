@@ -188,6 +188,12 @@ generate_window_list() {
             "URxvt")
                 w_name=""
                 ;;
+            "Termite")
+                w_name=""
+                ;;
+            "ATLauncher")
+                w_name=""
+                ;;
             "Code")
                 w_name=""
                 ;;

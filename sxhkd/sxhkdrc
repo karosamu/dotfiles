@@ -9,7 +9,7 @@ super + Escape
 
 # quit/restart bspwm
 super + shift + {q,r}
-	bspc {quit,wm -r && notify-send "bspwm" "Reloaded config"}
+	{sh $HOME/.config/scripts/quit.sh, bspc wm -r && notify-send "bspwm" "Reloaded config"}
 
 # close and kill
 super + q
@@ -112,9 +112,9 @@ super + shift + {Left,Down,Up,Right}
 
 # APPLICATION KEYBINDINGS (Super + Alt + Key)
 
-# launch urxvt
+# launch termite
 super + Return
-	urxvt
+	termite
 # launch chromium
 super + w
 	chromium --force-dark-mode --enable-features=WebUIDarkMode
@@ -208,7 +208,7 @@ super + shift + {period,comma}
 
 
 alt + Tab
-    rofi -show window -theme ~/.config/rofi/themes/appsmenu.rasi
+    rofi -show window -theme ~/.config/rofi/themes/list.rasi
 
 super + ctrl + n
     {nm-applet &,killall nm-applet}
