@@ -2,7 +2,7 @@
 
 My dotfiles repo
 
-![BSPWM](bspwmlow.png "BSPWM")
+![BSPWM](scrot.png "BSPWM")
 
 ## BSPWM
 
@@ -12,7 +12,7 @@ My dotfiles repo
 * bar: polybar
 * notifications: dunst
 * menu: rofi
-* terminal: alacritty
+* terminal: termite
 * gtk: phocus
 
 ## Requirements
@@ -27,7 +27,7 @@ My dotfiles repo
 * otf-sfmono
 * otf-san-francisco
 * nerd-fonts-sf-mono
-* alacritty
+* termite
 * maim
 
 ## Dirs
@@ -41,7 +41,6 @@ My dotfiles repo
     picom
     rofi
     startpage
-    alacritty.yml
   .mozilla/
     firefox/
       *.default-release/
