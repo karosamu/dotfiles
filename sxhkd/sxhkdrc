@@ -31,8 +31,8 @@ super + g
 # STATE/FLAGS
 
 # set the window state
-super + {t,shift + t,s,f}
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+super + {t,s,f}
+	bspc node -t {tiled,floating,fullscreen}
 
 # semi-fullscreen
 super + shift + f
@@ -115,9 +115,9 @@ super + shift + {Left,Down,Up,Right}
 # launch termite
 super + Return
 	termite
-# launch chromium
+# launch brave
 super + w
-	chromium --force-dark-mode --enable-features=WebUIDarkMode
+	brave
 # launch firefox
 super + shift + w
     firefox
@@ -216,3 +216,10 @@ super + ctrl + n
 
 super + shift + s
     sh $HOME/Downloads/rofi/1080p/applets/android/powermenu.sh
+
+#tabs
+super + shift + t; {Left,Down,Up,Right}
+    tabc add (bspc query -N -n focused) (bspc query -N -n {west,south,north,east})
+
+super + shift + t; r
+    tabc remove-child (bspc query -N -n focused)

@@ -2,7 +2,7 @@
 # POLYWINS
 
 # SETTINGS {{{ ---
-
+inactive_hidden="#123123"
 active_text_color=$(xrdb ~/.Xresources -query all | grep color6 | cut -f2 | head -n 1)
 
 inactive_text_color=$(xrdb ~/.Xresources -query all | grep foreground | cut -f2 | head -n 1)
@@ -10,7 +10,7 @@ inactive_text_color=$(xrdb ~/.Xresources -query all | grep foreground | cut -f2 
 separator="·"
 show="window_class" # options: window_title, window_class, window_classname
 forbidden_classes="Polybar Conky Gmrun"
-empty_desktop_message=""
+empty_desktop_message=""
 
 char_limit=20
 max_windows=15
@@ -43,13 +43,16 @@ main() {
 
 # ON-CLICK FUNCTIONS {{{ ---
 
-#raise_or_minimize() {
-#	if [ "$(get_active_wid)" = "$1" ]; then
-#		wmctrl -ir "$1" -b toggle,hidden
-#	else
-#		wmctrl -ia "$1"
-#	fi
-#}
+raise_or_minimize() {
+    if [ "$(bspc query -N -n .hidden | tr a-z A-Z | grep $(echo $1 | tr a-z A-Z))" = "$(echo $1 | tr a-z A-Z)" ]; then
+		#wmctrl -ir "$1" -b toggle,hidden
+        bspc node $1 -g hidden=off
+        bspc node -f $1
+	else
+        bspc node -f $1
+		bspc node $1 -g hidden=on
+	fi
+}
 
 #close() {
 #	wmctrl -ic "$1"
@@ -99,7 +102,8 @@ active_right="%{F-}"
 inactive_left="%{F$inactive_text_color}"
 inactive_right="%{F-}"
 separator="%{F$inactive_text_color}$separator%{F-}"
-
+hidden_left="%{F$inactive_text_color}%{+u}%{u$inactive_text_color}"
+hidden_right="%{-u}%{F-}"
 if [ -n "$active_underline" ]; then
 	active_left="${active_left}%{+u}%{u$active_underline}"
 	active_right="%{-u}${active_right}"
@@ -194,16 +198,25 @@ generate_window_list() {
             "ATLauncher")
                 w_name=""
                 ;;
-            "Code")
+            "VSCodium")
                 w_name=""
                 ;;
             "Chromium")
                 w_name=""
                 ;;
+            "Brave-browser")
+                w_name=""
+                ;;
+            "Blueman"*)
+                w_name=""
+                ;;
+            "Postman")
+                w_name=""
+                ;;
             "beta")
                 w_name=""
                 ;;
-            "Thunar")
+            "Thunar"*)
                 w_name=""
                 ;;
             "firefox")
@@ -233,6 +246,9 @@ generate_window_list() {
             "zoom")
                 w_name=""
                 ;;
+            "tabbed")
+                w_name="裡"
+                ;;
             "vlc")
                 w_name="嗢"
                 ;;
@@ -255,8 +271,15 @@ generate_window_list() {
 		if [ "$wid" = "$active_wid" ]; then
 			w_name="${active_left}${w_name}${active_right}"
 		else
-			w_name="${inactive_left}${w_name}${inactive_right}"
+            if [ "$(bspc query -N -n .hidden | tr a-z A-Z | grep $(echo $wid | tr a-z A-Z))" ]; then
+                w_name="${hidden_left}${w_name}${hidden_right}"
+            else
+                notify-send "$(bspc query -N -n .hidden | grep $wid)"
+			    w_name="${inactive_left}${w_name}${inactive_right}"
+            fi
 		fi
+
+
 
 		# Add separator unless the window is first in list
 		if [ "$window_count" != 0 ]; then
@@ -286,7 +309,7 @@ generate_window_list() {
 
 	# Print empty desktop message if no windows are open
 	if [ "$window_count" = 0 ]; then
-		printf "%s" "$empty_desktop_message"
+		printf "%s" "${active_left}${empty_desktop_message}${active_right}"
 	fi
 	
 	# Print newline

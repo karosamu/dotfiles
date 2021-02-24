@@ -8,7 +8,7 @@ then
     xrandr --output eDP1 --mode 1920x1080 --output DP1 --off
     xrandr --delmode DP1
     bspc monitor DP1 -r
-    bspc monitor eDP1 -d I II III IV V VI VII VIII IX X
+    bspc monitor eDP1 -d I II III IV V
 else
     xrandr --output DP1 --primary --mode 1920x1080 --rotate normal --output eDP1 --mode 1920x1080 --rotate normal --below DP1
     bspc monitor DP1 -d I II III IV V
@@ -27,5 +27,11 @@ bspc config split_ratio			    0.5
 bspc config borderless_monocle		true
 bspc config gapless_monocle		    false 
 bspc config single_monocle		    true
+
+bspc config remove_disabled_monitors true
+bspc config remove_unplugged_monitors true
+
+
+
 $HOME/.config/polybar/launch.sh &
 bspwm

@@ -4,11 +4,11 @@ debug=false
 
 # Possible values:
 # user time date uptime os kernel wm mem bat backlight vol wifi pkg sh weather music disk
-config=("user" "uptime" "os" "kernel" "wm" "mem" "pkg" "sh")
+config=("uptime" "kernel" "mem" "swap" "pkg")
 # notification urgency level
 level="normal"
 showupdates="true"
-weather_city="London"
+weather_city="Kaunas"
 # disk path array ("/dev/***" "/dev/***" "dev/***")
 disk_path=("/dev/nvme0n1p1")
 
@@ -17,6 +17,7 @@ user_prefix=""
 vol_prefix=""
 bat_prefix=""
 mem_prefix=""
+swap_prefix="易"
 date_prefix=""
 time_prefix=""
 wifi_prefix="直"
@@ -86,6 +87,10 @@ do
             mem="$(echo $mem | sed 's/$/M/')"
             mem2="$(echo $mem2 | sed 's/$/M/')"
             argconf+=$mem_prefix' '$mem/$mem2/$totmem'\n'
+        ;;
+        swap)
+            swap="$(free -m | tail -n 1 | awk '{ print $3 }')"
+            argconf+=$swap_prefix' '$swap'M\n'
         ;;
         date)
             date="$(date +"%a %F")"

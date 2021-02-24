@@ -1,20 +1,20 @@
 [frame]
     width = 0
-    color = "#BF857A"
+    color = "#888D78"
 
 [urgency_low]
-    background = "#121313"
-    foreground = "#BF857A"
+    background = "#121a1b"
+    foreground = "#888D78"
     timeout = 2
 
 [urgency_normal]
-    background = "#121313"
-    foreground = "#e4c6c0"
+    background = "#121a1b"
+    foreground = "#b3baba"
     timeout = 3
 
 [urgency_critical]
-    background = "#BF857A"
-    foreground = "#121313"
+    background = "#888D78"
+    foreground = "#121a1b"
     timeout = 15
 
 [global]
@@ -33,7 +33,7 @@
     # If width is 0, window will fit to longest message
     # Positive x value is measured from the left of the screen, negative x is measured from the right
     # Positive y value is measured from the top of the screen
-    geometry = "400x1022-4+54"
+    geometry = "400x1022-4+52"
 
     font = SFMono Nerd Font Mono 12
     allow_markup = yes
@@ -92,14 +92,14 @@
     body = *Spotify*
     format = "%b\n[ <span font_desc='SF Pro Display 20'><i>%s</i></span>
 ]"
-    background = "#92635C"
+    background = "#4C4F4F"
 
 [bluetooth]
     summary = Bluetooth
     format = "<span size="x-large">󰂯<b>%s</b></span>\n%b"
-    background = "#BF857A"
+    background = "#888D78"
 
 [maim]
     appname = maim
     format = "<span size="x-large">📷<b>  %s </b></span>\n<i>%b</i>"
-    background = "#BF857A"
+    background = "#888D78"
