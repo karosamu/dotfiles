@@ -1,20 +1,20 @@
 [frame]
     width = 0
-    color = "#888D78"
+    color = "#C7B9B4"
 
 [urgency_low]
-    background = "#121a1b"
-    foreground = "#888D78"
+    background = "#0d0d0d"
+    foreground = "#C7B9B4"
     timeout = 2
 
 [urgency_normal]
-    background = "#121a1b"
-    foreground = "#b3baba"
+    background = "#0d0d0d"
+    foreground = "#e1dedd"
     timeout = 3
 
 [urgency_critical]
-    background = "#888D78"
-    foreground = "#121a1b"
+    background = "#C7B9B4"
+    foreground = "#0d0d0d"
     timeout = 15
 
 [global]
@@ -35,7 +35,7 @@
     # Positive y value is measured from the top of the screen
     geometry = "400x1022-4+52"
 
-    font = SFMono Nerd Font Mono 12
+    font = FiraCode Nerd Font Mono 12
     allow_markup = yes
     plain_text = no             # Treat message as plain text
     sort = yes                  # Sort messages by urgency
@@ -92,14 +92,14 @@
     body = *Spotify*
     format = "%b\n[ <span font_desc='SF Pro Display 20'><i>%s</i></span>
 ]"
-    background = "#4C4F4F"
+    background = "#8F6E5F"
 
 [bluetooth]
     summary = Bluetooth
     format = "<span size="x-large">󰂯<b>%s</b></span>\n%b"
-    background = "#888D78"
+    background = "#C7B9B4"
 
 [maim]
     appname = maim
     format = "<span size="x-large">📷<b>  %s </b></span>\n<i>%b</i>"
-    background = "#888D78"
+    background = "#C7B9B4"

@@ -112,9 +112,9 @@ super + shift + {Left,Down,Up,Right}
 
 # APPLICATION KEYBINDINGS (Super + Alt + Key)
 
-# launch termite
+# launch terminal
 super + Return
-	termite
+    alacritty	
 # launch brave
 super + w
 	brave

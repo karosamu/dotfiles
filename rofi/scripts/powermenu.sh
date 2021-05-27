@@ -14,7 +14,7 @@ options="$power_off\n$reboot\n$lock\n$suspend\n$log_out"
 chosen="$(echo -e "$options" | $rofi_command -dmenu -selected-row 2)"
 case $chosen in
     $lock)
-        setxkbmap gb -option caps:escape && betterlockscreen -l dimblur -t "karsam"
+        setxkbmap us -option caps:escape && betterlockscreen -l dimblur -t "karsam"
         ;;    
     $power_off)
         systemctl poweroff

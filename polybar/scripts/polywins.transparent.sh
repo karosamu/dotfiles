@@ -187,25 +187,31 @@ generate_window_list() {
 
         case "$w_name" in
             "Alacritty")
-                w_name=""
+                w_name=""
                 ;;
             "URxvt")
-                w_name=""
+                w_name=""
                 ;;
             "Termite")
-                w_name=""
+                w_name=""
                 ;;
             "ATLauncher")
                 w_name=""
                 ;;
             "VSCodium")
-                w_name=""
+                w_name="﬏"
+                ;;
+            "code-oss")
+                w_name="﬏"
+                ;;
+            "Solaar")
+                w_name=""
                 ;;
             "Chromium")
-                w_name=""
+                w_name=""
                 ;;
             "Brave-browser")
-                w_name=""
+                w_name=""
                 ;;
             "Blueman"*)
                 w_name=""
@@ -213,11 +219,17 @@ generate_window_list() {
             "Postman")
                 w_name=""
                 ;;
+            "Insomnia")
+                w_name=""
+                ;;
             "beta")
-                w_name=""
+                w_name=""
+                ;;
+            "echo")
+                w_name=""
                 ;;
             "Thunar"*)
-                w_name=""
+                w_name=""
                 ;;
             "firefox")
                 w_name=""
@@ -235,10 +247,10 @@ generate_window_list() {
                 w_name=""
                 ;;
             "Steam")
-                w_name="戮"
+                w_name=""
                 ;;
             "pwmt")
-                w_name=""
+                w_name=""
                 ;;
             "exe")
                 w_name=""
@@ -251,6 +263,9 @@ generate_window_list() {
                 ;;
             "vlc")
                 w_name="嗢"
+                ;;
+            "teams")
+                w_name=""
                 ;;
             "Font-manager")
                 w_name=""

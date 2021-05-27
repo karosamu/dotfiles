@@ -11,8 +11,9 @@ then
     bspc monitor eDP1 -d I II III IV V
 else
     xrandr --output DP1 --primary --mode 1920x1080 --rotate normal --output eDP1 --mode 1920x1080 --rotate normal --below DP1
-    bspc monitor DP1 -d I II III IV V
-    bspc monitor eDP1 -d VI VII VIII IX X
+    xrandr --output DP1 --primary --mode 1920x1080 --rotate normal --output eDP1 --mode 1920x1080 --rotate normal --right-of DP1
+    bspc monitor DP1 -d VI VII VIII IX X
+    bspc monitor eDP1 -d I II III IV V
 fi
 
 bspc config border_radius           15  
@@ -30,8 +31,6 @@ bspc config single_monocle		    true
 
 bspc config remove_disabled_monitors true
 bspc config remove_unplugged_monitors true
-
-
 
 $HOME/.config/polybar/launch.sh &
 bspwm

@@ -5,7 +5,7 @@
 * {
   background-color: #00000000;
   text-color: @foreground-list;
-  font: "SFMono Nerd Font Mono Bold 12";
+  font: "FiraCode Nerd Font Mono 12";
 }
 #window {
   background-color: @background;

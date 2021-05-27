@@ -5,7 +5,7 @@
 * {
   background-color: #00000000;
   text-color: @foreground-list;
-  font: "SFMono Nerd Font Mono 60";
+  font: "FiraCode Nerd Font Mono 60";
 }
 prompt,inputbar,entry,textbox-prompt-colon { enabled: false; }
 #window {

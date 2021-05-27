@@ -35,7 +35,7 @@
     # Positive y value is measured from the top of the screen
     geometry = "400x1022-4+52"
 
-    font = SFMono Nerd Font Mono 12
+    font = FiraCode Nerd Font Mono 12
     allow_markup = yes
     plain_text = no             # Treat message as plain text
     sort = yes                  # Sort messages by urgency

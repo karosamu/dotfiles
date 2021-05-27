@@ -1,0 +1,12 @@
+URxvt.scrollBar: false
+URxvt.font: xft:SFMono Nerd Font Mono:size=14
+URxvt.internalBorder: 32
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+URxvt.keysym.C-S-0x43: eval:selection_to_clipboard
+URxvt.keysym.C-S-0x56: eval:paste_clipboard
+URxvt.keysym.Control-Meta-c: builtin-string:
+URxvt.keysym.Control-Meta-v: builtin-string:
+URxvt.scrollTtyOutput: false
+URxvt.perl-ext-common: "default, -searchable-scrollback"
+URxvt.perl-ext-common: ibeamcursor
