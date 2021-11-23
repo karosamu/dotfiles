@@ -1,0 +1,155 @@
+body {
+    background-color: var(--bg);
+    font-family: "SFMono Nerd Font Mono", monospace;
+    border-radius: 20px;
+}
+
+p {
+    margin: 10;
+    pointer-events: none;
+    color: var(--fg);
+    font-family: "SFMono Nerd Font Mono", monospace;
+}
+
+span {
+    pointer-events: none;
+}
+
+#titlebar {
+    padding: 10px;
+    border-radius: 20px 20px 0px 0px;
+    background-color: var(--bg-light);
+    margin: auto;
+}
+
+.dot {
+    margin-right: 5px;
+    margin-top: 3px;
+    float: right;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    outline: none;
+    border: none;
+}
+
+.dot:hover {
+    background-color: var(--acc1-hover);
+}
+
+.themes {
+    background-color: var(--acc1);
+}
+
+.list {
+    background-color: var(--acc2);
+}
+
+.closed {
+    display: none;
+}
+
+.minimized {
+    height: 18px;
+    width: 420px;
+    border-radius: 20px !important;
+    padding-top: auto !important;
+}
+
+#titlebar.minimized input {
+    display: unset;
+    margin-left: 10px;
+}
+
+#titlebar input {
+    display: none;
+    margin-top: -2px;
+}
+
+#clock {
+    float: left;
+    pointer-events: none;
+    font-family: "SFMono Nerd Font Mono", monospace;
+    font-size: 13px;
+    color: var(--acc1);
+    padding-left: 15px;
+}
+
+html {
+    font-family: "SFMono Nerd Font Mono", monospace;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+a {
+    color: var(--acc2);
+    text-decoration: none;
+    margin: 8px;
+    pointer-events: auto;
+    font-family: "SFMono Nerd Font Mono", monospace;
+}
+
+a:focus,
+a:hover {
+    font-weight: bold;
+}
+
+th {
+    font-weight: normal;
+}
+
+.prompt {
+    color: var(--fg);
+    pointer-events: none;
+    font-family: "SFMono Nerd Font Mono", monospace;
+}
+
+.purple {
+    color: var(--acc1);
+    font: inherit;
+    pointer-events: none;
+}
+
+#terminal-content {
+    background-color: var(--bg-light);
+    border-radius: 0px 0px 20px 20px;
+    padding: 100px;
+}
+
+input,
+input:focus {
+    background-color: var(--bg-light);
+    font: inherit;
+    margin: 0;
+    font-family: "SFMono Nerd Font Mono", monospace;
+    border: none;
+    color: var(--fg);
+    pointer-events: none;
+    outline: none;
+}
+
+li {
+    list-style: none;
+    color: var(--acc2);
+    font-family: "SFMono Nerd Font Mono", monospace;
+}
+
+.ls-item {
+    color: var(--acc1);
+    font-family: "SFMono Nerd Font Mono", monospace;
+    padding-left: 8px;
+    margin: 8px;
+}
+
+.material-icons.md-36 {
+    font-size: 36px;
+    vertical-align: middle;
+}
+
+.ls-item-padd {
+    padding-left: 45px;
+}

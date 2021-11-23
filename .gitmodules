@@ -1,0 +1,9 @@
+[submodule "awesome/module/bling"]
+	path = awesome/module/bling
+	url = https://github.com/BlingCorp/bling
+[submodule "awesome/module/keyboard_layout"]
+	path = awesome/module/keyboard_layout
+	url = https://github.com/echuraev/keyboard_layout
+[submodule "awesome/module/layout-machi"]
+	path = awesome/module/layout-machi
+	url = https://github.com/xinhaoyuan/layout-machi

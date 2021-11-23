@@ -1,0 +1,68 @@
+// Special
+$background: #1d1f21;
+$foreground: #c5c8c6;
+$cursor: #c5c8c6;
+// Colors
+$color0: #cc6666;
+$color1: #a54242;
+$color2: #cc6666;
+$color3: #cc6666;
+$color4: #cc6666;
+$color5: #cc6666;
+$color6: #cc6666;
+$color7: #cc6666;
+$color8: #cc6666;
+$color9: #cc6666;
+$color10: #cc6666;
+$color11: #cc6666;
+$color12: #cc6666;
+$color13: #cc6666;
+$color14: #cc6666;
+$color15: #cc6666;
+$background-1: $background;
+$background-2: $background;
+$background-3: $background;
+$accent-1: $color1;
+$accent-2: $color2;
+$accent-3: $color3;
+$accent-4: $color4;
+$accent-5: $color5;
+$accent-6: $color6;
+$accent-7: $color7;
+$accent-8: $color8;
+$primary-accent: $accent-6;
+$secondary-accent: $accent-1;
+$foreground-color: $foreground;
+// TODO: is there a better way to do this? this is for example used in gnome-calculator for the result top-border
+@define-color borders #{"" +$background-2};
+
+/*
+colors:
+  primary:
+    background: '#1d1f21'
+    foreground: '#c5c8c6'
+
+  cursor:
+    text:   '#c5c8c6'
+    cursor: '#c5c8c6'
+
+  normal:
+    black:   '#373b41'
+    red:     '#a54242'
+    green:   '#8c9440'
+    yellow:  '#de935f'
+    blue:    '#5f819d'
+    magenta: '#85678f'
+    cyan:    '#5e8d87'
+    white:   '#969896'
+
+  bright:
+    black:   '#ffffff'
+    red:     '#cc6666'
+    green:   '#b5bd68'
+    yellow:  '#f0c674'
+    blue:    '#81a2be'
+    magenta: '#b294bb'
+    cyan:    '#8abeb7'
+    white:   '#c5c8c6'
+    */
