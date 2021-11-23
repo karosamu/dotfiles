@@ -33,7 +33,7 @@
 * xclip
 * betterlockscreen
 
-## Dirs
+## dirs
 ```
 ~
   .config/
