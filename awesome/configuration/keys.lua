@@ -73,7 +73,7 @@ awful.keyboard.append_global_keybindings({
 
 	-- Volume control
 	awful.key({}, "XF86AudioRaiseVolume", function()
-		awful.spawn.easy_async_with_shell("pactl set-sink-volume @DEFAULT_SINK@ +5%", function()
+		awful.spawn.easy_async_with_shell("amixer -D pulse sset Master 5%+", function()
 			awesome.emit_signal("volume_refresh")
 		end)
 	end, {
@@ -81,7 +81,7 @@ awful.keyboard.append_global_keybindings({
 		group = "audio",
 	}),
 	awful.key({}, "XF86AudioLowerVolume", function()
-		awful.spawn.easy_async_with_shell("pactl set-sink-volume @DEFAULT_SINK@ -5%", function()
+		awful.spawn.easy_async_with_shell("amixer -D pulse sset Master 5%-", function()
 			awesome.emit_signal("volume_refresh")
 		end)
 	end, {

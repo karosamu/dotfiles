@@ -14,8 +14,17 @@ theme.font_medium = "SFMono Nerd Font Mono 14"
 theme.font_big = "SFMono Nerd Font Mono 16"
 theme.font_icon = "SFMono Nerd Font Mono"
 
-theme.primary = "#1d1f21"
-theme.primary_dark = "#ffffff"
+theme.black = "#1d1f21"
+theme.white = "#ffffff"
+theme.red = "#cc6666"
+theme.green = "#b5bd68"
+theme.yellow = "#f0c674"
+theme.blue = "#81a2be"
+theme.magenta = "#b294bb"
+theme.cyan = "#8abeb7"
+
+theme.primary = theme.black
+theme.primary_dark = theme.white
 
 theme.secondary = "#282a2e"
 theme.secondary_bright = "#cc6666"
@@ -23,13 +32,6 @@ theme.secondary_bright = "#cc6666"
 theme.foreground = "#c5c8c6"
 theme.foreground_dark = "#373b41"
 theme.foreground_bright = "#ffffff"
-
-theme.red = "#cc6666"
-theme.green = "#b5bd68"
-theme.yellow = "#f0c674"
-theme.blue = "#81a2be"
-theme.magenta = "#b294bb"
-theme.cyan = "#8abeb7"
 
 theme.progress_bar_normal = theme.blue
 theme.progress_bar_off = theme.red
@@ -70,9 +72,11 @@ theme.tag_empty = theme.secondary
 theme.tag_ind = theme.secondary_bright
 theme.tag_hover = theme.secondary_bright
 
-theme.volume_color_normal = "#b5bd68"
-theme.volume_color_high = "#cc6666"
-theme.volume_color_muted = "#cc6666"
+theme.volume_color_normal = theme.green
+theme.volume_color_mid = theme.yellow
+theme.volume_color_high = theme.red
+theme.volume_color_max = theme.blue
+theme.volume_color_muted = theme.foreground_dark
 
 -----------
 -- bling --

@@ -51,37 +51,49 @@ awesome.connect_signal("signal::battery", function(percentage, state)
 	local value = percentage
 
 	local bat_icon = ""
+	local bat_color = beautiful.green
 
 	if value >= 0 and value <= 15 then
 		bat_icon = ""
+		bat_color = beautiful.red
 	elseif value > 15 and value <= 20 then
 		bat_icon = ""
+		bat_color = beautiful.red
 	elseif value > 20 and value <= 30 then
 		bat_icon = ""
+		bat_color = beautiful.red
 	elseif value > 30 and value <= 40 then
 		bat_icon = ""
+		bat_color = beautiful.red
 	elseif value > 40 and value <= 50 then
 		bat_icon = ""
+		bat_color = beautiful.yellow
 	elseif value > 50 and value <= 60 then
 		bat_icon = ""
+		bat_color = beautiful.yellow
 	elseif value > 60 and value <= 70 then
 		bat_icon = ""
+		bat_color = beautiful.yellow
 	elseif value > 70 and value <= 80 then
 		bat_icon = ""
+		bat_color = beautiful.green
 	elseif value > 80 and value <= 90 then
 		bat_icon = ""
+		bat_color = beautiful.green
 	elseif value > 90 and value <= 100 then
 		bat_icon = ""
+		bat_color = beautiful.green
 	end
 
 	-- if charging
 	if state == 1 then
 		bat_icon = ""
+		bat_color = beautiful.blue
 	end
 
 	battery_prog.value = percentage
 
-	battery_icon.markup = "<span foreground='" .. beautiful.red .. "'>" .. bat_icon .. "</span>"
+	battery_icon.markup = "<span foreground='" .. bat_color .. "'>" .. bat_icon .. "</span>"
 end)
 
 -- Creates the textclock widget.
@@ -130,7 +142,9 @@ local function draw_volume(cr, height)
 
 	local colors = {
 		get_color("volume_color_normal"),
+		get_color("volume_color_mid"),
 		get_color("volume_color_high"),
+		get_color("volume_color_max"),
 	}
 	local muted_color = get_color("volume_color_muted")
 
@@ -146,7 +160,7 @@ local function draw_volume(cr, height)
 		cr:stroke()
 	end
 
-	if volume <= 100 then
+	if volume <= 33 then
 		local c
 		if muted then
 			c = muted_color
@@ -154,21 +168,29 @@ local function draw_volume(cr, height)
 			c = colors[1]
 		end
 		draw_volume_arc(0, progress, c)
-	elseif volume <= 200 then
-		local c
-		if muted then
-			c = muted_color
-		else
-			c = colors[1]
-			draw_volume_arc(progress, 0, colors[1])
-		end
-		draw_volume_arc(0, progress, c)
-	else
+	elseif volume <= 66 and volume >= 33 then
 		local c
 		if muted then
 			c = muted_color
 		else
 			c = colors[2]
+		end
+		draw_volume_arc(0, progress, c)
+	elseif volume <= 99 and volume >= 66 then
+		local c
+		if muted then
+			c = muted_color
+		else
+			c = colors[3]
+			draw_volume_arc(0, progress, c)
+		end
+		draw_volume_arc(0, progress, c)
+	elseif volume <= 100 and volume >= 99 then
+		local c
+		if muted then
+			c = muted_color
+		else
+			c = colors[4]
 		end
 		draw_volume_arc(0, 1, c)
 	end
@@ -229,7 +251,7 @@ awful.screen.connect_for_each_screen(function(s)
 	))
 
 	-- Tagtable for each screen.
-	awful.tag({ "1", "2", "3", "4", "5" }, s, awful.layout.layouts[1])
+	awful.tag({ "1", "2", "3", "4", "5" }, s, awful.layout.layouts[3])
 
 	local function draw_circle(cr, height)
 		cr:arc(height / 2, height / 2, 5, 0, math.pi * 2)
