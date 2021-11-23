@@ -1,8 +1,9 @@
-![](https://img.shields.io/badge/wm-awesome-%23cc6666)
-
 # dotfiles
 
 ![awesome](image.png "awesome")
+<p align="center">
+  <img src="https://img.shields.io/badge/wm-awesome-%23cc6666" />
+</p>
 
 ## awesome
 
