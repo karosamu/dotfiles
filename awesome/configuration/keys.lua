@@ -221,7 +221,9 @@ awful.keyboard.append_global_keybindings({
 		group = "layout",
 	}),
 	awful.key({ modkey }, "l", function()
-		awful.spawn.with_shell("powermenu")
+		awful.spawn.easy_async_with_shell("powermenu", function()
+			kbdcfg.switch_by_name("English (UK)")
+		end)
 	end, {
 		description = "power menu",
 		group = "system",
