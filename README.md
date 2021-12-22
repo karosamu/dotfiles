@@ -1,5 +1,7 @@
 # dotfiles
 
+![Old bspwm config](https://github.com/karosamu/dotfiles/tree/dotfiles/bspwm)
+
 ![awesome](image.png "awesome")
 <p align="center">
   <img src="https://img.shields.io/badge/wm-awesome-%23cc6666" />
