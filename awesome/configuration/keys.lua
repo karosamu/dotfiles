@@ -73,7 +73,7 @@ awful.keyboard.append_global_keybindings({
 
 	-- Volume control
 	awful.key({}, "XF86AudioRaiseVolume", function()
-		awful.spawn.easy_async_with_shell("amixer -D pulse sset Master 5%+", function()
+		awful.spawn.easy_async_with_shell("pactl set-sink-mute @DEFAULT_SINK@ no && amixer -D pulse sset Master 5%+ && notify-bar.sh 'Volume' 100 (amixer get Master | awk '$0~/%/{print $5}' | tr -d '[]%' | tail -n 1) volume", function()
 			awesome.emit_signal("volume_refresh")
 		end)
 	end, {
@@ -81,7 +81,7 @@ awful.keyboard.append_global_keybindings({
 		group = "audio",
 	}),
 	awful.key({}, "XF86AudioLowerVolume", function()
-		awful.spawn.easy_async_with_shell("amixer -D pulse sset Master 5%-", function()
+		awful.spawn.easy_async_with_shell("pactl set-sink-mute @DEFAULT_SINK@ no && amixer -D pulse sset Master 5%- && notify-bar.sh 'Volume' 100 (amixer get Master | awk '$0~/%/{print $5}' | tr -d '[]%' | tail -n 1) volume", function()
 			awesome.emit_signal("volume_refresh")
 		end)
 	end, {
@@ -89,7 +89,7 @@ awful.keyboard.append_global_keybindings({
 		group = "audio",
 	}),
 	awful.key({}, "XF86AudioMute", function()
-		awful.spawn.easy_async_with_shell("pactl set-sink-mute @DEFAULT_SINK@ toggle", function()
+		awful.spawn.easy_async_with_shell("pactl set-sink-mute @DEFAULT_SINK@ toggle && muted", function()
 			awesome.emit_signal("volume_refresh")
 		end)
 	end, {
@@ -133,13 +133,13 @@ awful.keyboard.append_global_keybindings({
 
 	-- Brightness
 	awful.key({}, "XF86MonBrightnessUp", function()
-		awful.spawn("brightnessctl s +5%")
+		awful.spawn.with_shell("bright-notify +5%")
 	end, {
 		description = "increase brightness",
 		group = "system",
 	}),
 	awful.key({}, "XF86MonBrightnessDown", function()
-		awful.spawn("brightnessctl s 5%-")
+		awful.spawn.with_shell("bright-notify 5%-")
 	end, {
 		description = "decrease brightness",
 		group = "system",

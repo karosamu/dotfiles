@@ -14,7 +14,7 @@ require("awful.autofocus")
 local beautiful = require("beautiful")
 
 -- Notification library
-local naughty = require("naughty")
+naughty = require("naughty")
 
 -- Hotkeys popup
 local hotkeys_popup = require("awful.hotkeys_popup")
